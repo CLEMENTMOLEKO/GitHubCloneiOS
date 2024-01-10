@@ -10,7 +10,6 @@ import SwiftUI
 struct ExploreView: View {
     @StateObject var vm: ExploreViewModel = .init()
     @State var showAlert: Bool = false
-    @State var isLoading: Bool = false //TODO: let's use completion handler
     
     var body: some View {
         NavigationStack {
@@ -25,7 +24,7 @@ struct ExploreView: View {
             .navigationTitle("Explore")
             .searchable(text: $vm.searchValue, prompt: Text("Search GitHub"))
             .task {
-                try! await loadData()
+                await vm.getRepositories()
             }
         }
     }
@@ -103,7 +102,7 @@ private extension ExploreView {
     
     @ViewBuilder
     private var repositoryList: some View {
-        if isLoading {
+        if vm.isLoading {
             ProgressView()
         } else if !vm.repositories.isEmpty {
             ForEach(vm.repositories) { repository in
@@ -115,26 +114,11 @@ private extension ExploreView {
                 Text("There was an error loading repositories.")
                 Button("Try Again") {
                     Task {
-                        try! await loadData()
+                        await vm.getRepositories()
                     }
                 }
                 .buttonStyle(.borderedProminent)
             }
-        }
-    }
-}
-
-//MARK: Functions
-private extension ExploreView {
-    //use completion handler and delete this.
-    func loadData() async throws  {
-        do {
-            isLoading = true
-            try await vm.getRepositories()
-            isLoading = false
-        } catch {
-            showAlert = true
-            isLoading = false
         }
     }
 }

@@ -47,7 +47,7 @@ struct HomeView: View {
             .sheet(item: $currentHomeSheet) { item in
                 switch item {
                 case .myWork:
-                    Text("My works view")
+                    MyWorksViewSort(vm: vm)
                 case .favorites:
                     Text("Favorites view")
                 case .shortcuts:

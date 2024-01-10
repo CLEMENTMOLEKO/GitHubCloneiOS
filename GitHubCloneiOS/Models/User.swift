@@ -38,6 +38,6 @@ struct User: Codable {
   var publicGists       : Int?    = nil
   var followers         : Int?    = nil
   var following         : Int?    = nil
-  var createdAt         : Date
-  var updatedAt         : Date
+  var createdAt         : Date?
+  var updatedAt         : Date?
 }

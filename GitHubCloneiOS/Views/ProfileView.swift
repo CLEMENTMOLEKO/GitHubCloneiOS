@@ -13,9 +13,18 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             List {
-                detailSection
-                itemsSection
-                popularSection
+                switch vm.userState {
+                case .loading:
+                    ProfileView()
+                case .success:
+                    detailSection
+                    itemsSection
+                    popularSection
+                case .failed:
+                    Text("Error Occured")
+                default:
+                    EmptyView()
+                }
             }
             .listStyle(.grouped)
             .toolbar{
@@ -25,12 +34,16 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "gearshape")
                     }
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "square.and.arrow.up")
+                    //TODO: url below should be from user defaults or swiftdata for the user who logged in currently.
+                    if let htmlUrl = vm.user?.htmlUrl {
+                        ShareLink(item: URL(string: htmlUrl)!) {
+                            Image(systemName: "square.and.arrow.up")
+                        }
                     }
                 }
+            }
+            .task {
+                await vm.getUser()
             }
         }
     }
@@ -41,7 +54,7 @@ private extension ProfileView {
     private var detailSection: some View {
         Section {
             HStack {
-                AsyncImage(url: URL(string: "https://picsum.photos/200")) { image in
+                AsyncImage(url: URL(string: vm.user?.avatarUrl ?? "")) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -54,15 +67,15 @@ private extension ProfileView {
                         )
                 }
                 .frame(width: 80)
-                Text("Username Placeholder".uppercased())
+                Text(vm.user?.login.uppercased() ?? "")
                 Spacer()
             }
             
             VStack(alignment: .leading, spacing: 30){
-                Text("This is the bio placeholder and we are typing a long message so we see how it displays")
+                Text(vm.user?.bio ?? "")
                 HStack{
                     Image(systemName: "person")
-                    Text("1 following")
+                    Text("\(vm.user?.following ?? 0) following")
                 }
                 .font(.headline)
             }
@@ -98,7 +111,7 @@ private extension ProfileView {
         Section {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    AsyncImage(url: URL(string: "https://picsum.photos/200")) { image in
+                    AsyncImage(url: URL(string: vm.user?.avatarUrl ?? "")) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -112,10 +125,10 @@ private extension ProfileView {
                     }
                     .frame(width: 30)
                     
-                    Text("Username Placeholder".uppercased())
+                    Text(vm.user?.login.uppercased() ?? "")
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                Text("repository name placeholder")
+                Text("repository name placeholder") //TODO: we need to get popular repos for the logged in user.
                     .font(.headline)
                 Text("This is the placeholder for the popular repository shown on the profile")
             }

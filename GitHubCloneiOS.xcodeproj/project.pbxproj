@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
 		28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F22B4719DB00C0DA24 /* NotificationsView.swift */; };
 		28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F42B4724A400C0DA24 /* ProfileView.swift */; };
 		28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F62B47321200C0DA24 /* ExploreView.swift */; };
@@ -22,9 +23,12 @@
 		28F343F62B488A7E00FDB44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343F52B488A7E00FDB44B /* User.swift */; };
 		28F343F92B4939A700FDB44B /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343F82B4939A700FDB44B /* RepositoryView.swift */; };
 		28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343FA2B49498C00FDB44B /* TrendingRepositoriesView.swift */; };
+		28F343FD2B4D7A0400FDB44B /* MyWorksViewSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343FC2B4D7A0400FDB44B /* MyWorksViewSort.swift */; };
+		28F343FF2B4DE3D000FDB44B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343FE2B4DE3D000FDB44B /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		28A988F22B4719DB00C0DA24 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		28A988F42B4724A400C0DA24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		28A988F62B47321200C0DA24 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -41,6 +45,8 @@
 		28F343F52B488A7E00FDB44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28F343F82B4939A700FDB44B /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
 		28F343FA2B49498C00FDB44B /* TrendingRepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesView.swift; sourceTree = "<group>"; };
+		28F343FC2B4D7A0400FDB44B /* MyWorksViewSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWorksViewSort.swift; sourceTree = "<group>"; };
+		28F343FE2B4DE3D000FDB44B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285AE01B2B4E803000FDCED9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				285AE01C2B4E804F00FDCED9 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		28B63FC22B465B7700FF0EDC = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +87,7 @@
 		28B63FCD2B465B7700FF0EDC /* GitHubCloneiOS */ = {
 			isa = PBXGroup;
 			children = (
+				285AE01B2B4E803000FDCED9 /* Services */,
 				28F343F72B49398400FDB44B /* Components */,
 				28F1985C2B4668ED00FE2064 /* Models */,
 				28F198592B4668C100FE2064 /* ViewModels */,
@@ -100,6 +115,8 @@
 				28A988F42B4724A400C0DA24 /* ProfileView.swift */,
 				28A988F62B47321200C0DA24 /* ExploreView.swift */,
 				28F343FA2B49498C00FDB44B /* TrendingRepositoriesView.swift */,
+				28F343FC2B4D7A0400FDB44B /* MyWorksViewSort.swift */,
+				28F343FE2B4DE3D000FDB44B /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,15 +219,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F343FF2B4DE3D000FDB44B /* SettingsView.swift in Sources */,
 				28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryView.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
+				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
 				28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
 				28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */,
 				28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */,
+				28F343FD2B4D7A0400FDB44B /* MyWorksViewSort.swift in Sources */,
 				28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */,
 				28C834452B47FCA500255A7F /* Repository.swift in Sources */,
 				28F198582B46688200FE2064 /* HomeView.swift in Sources */,

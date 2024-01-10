@@ -9,37 +9,24 @@ import Foundation
 
 @MainActor
 final class ExploreViewModel : ObservableObject {
+    
     @Published var searchValue = ""
     @Published var repositories: [Repository] = []
-    
-    enum RequestError: Error {
-        case invalidEndpoint
-        case invalidResponse
-        case failedToDecode
-    }
+    @Published var isLoading = false //TODO: create an enum for states of success, failure and loading.
     
     let gitHubItems: [Item] = [
         Item(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
         Item(name: "Awesome LIsts", systemImage: "face.smiling", systemImageColor: .pink),
     ]
     
-    func getRepositories() async throws {
-        let endpoint = "https://api.github.com/repositories"
-
-        guard let url = URL(string: endpoint) else { throw RequestError.invalidEndpoint}
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw RequestError.invalidResponse}
-        
+    func getRepositories() async {
+        let apiService = APIService(urlEndPoint: "https://api.github.com/repositories")
         do {
-            let decoder = JSONDecoder()
-            repositories = try decoder.decode([Repository].self, from: data)
-            print("Successfully decoded")
-            dump(repositories)
-        } catch let error {
-            print("Error decoded \(error)")
-            throw RequestError.failedToDecode
+            isLoading = true
+            repositories = try await apiService.getJSONData()
+            isLoading = false
+        } catch {
+            isLoading = false
         }
     }
 }
