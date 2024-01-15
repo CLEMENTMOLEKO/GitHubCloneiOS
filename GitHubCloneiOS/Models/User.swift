@@ -9,35 +9,35 @@ import Foundation
 
 struct User: Codable {
   var login             : String
-  var id                : Int?    = nil
-  var nodeId            : String? = nil
-  var avatarUrl         : String? = nil
-  var gravatarId        : String? = nil
-  var url               : String? = nil
-  var htmlUrl           : String? = nil
-  var followersUrl      : String? = nil
-  var followingUrl      : String? = nil
-  var gistsUrl          : String? = nil
-  var starredUrl        : String? = nil
-  var subscriptionsUrl  : String? = nil
-  var organizationsUrl  : String? = nil
-  var reposUrl          : String? = nil
-  var eventsUrl         : String? = nil
-  var receivedEventsUrl : String? = nil
-  var type              : String? = nil
-  var siteAdmin         : Bool?   = nil
-  var name              : String? = nil
-  var company           : String? = nil
-  var blog              : String? = nil
-  var location          : String? = nil
-  var email             : String? = nil
-  var hireable          : Bool?   = nil
-  var bio               : String? = nil
-  var twitterUsername   : String? = nil
-  var publicRepos       : Int?    = nil
-  var publicGists       : Int?    = nil
-  var followers         : Int?    = nil
-  var following         : Int?    = nil
+  var id                : Int?
+  var nodeId            : String?
+  var avatarUrl         : String?
+  var gravatarId        : String?
+  var url               : String?
+  var htmlUrl           : String?
+  var followersUrl      : String?
+  var followingUrl      : String?
+  var gistsUrl          : String?
+  var starredUrl        : String?
+  var subscriptionsUrl  : String?
+  var organizationsUrl  : String?
+  var reposUrl          : String?
+  var eventsUrl         : String?
+  var receivedEventsUrl : String?
+  var type              : String?
+  var siteAdmin         : Bool?
+  var name              : String?
+  var company           : String?
+  var blog              : String?
+  var location          : String?
+  var email             : String?
+  var hireable          : Bool?
+  var bio               : String?
+  var twitterUsername   : String?
+  var publicRepos       : Int?
+  var publicGists       : Int?
+  var followers         : Int?
+  var following         : Int?
   var createdAt         : Date?
   var updatedAt         : Date?
 }

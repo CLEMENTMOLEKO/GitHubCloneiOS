@@ -20,7 +20,7 @@ final class ProfileViewModel: ObservableObject {
     ]
     
     @Published var user: User? = nil
-    @Published var userState: UserState? = nil
+    @Published var userState: UserState = .loading
     
     func getUser() async {
         //TODO: user url should come from logged in user, for now we can use user defaults.

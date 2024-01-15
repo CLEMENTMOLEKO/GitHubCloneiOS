@@ -15,15 +15,15 @@ struct ProfileView: View {
             List {
                 switch vm.userState {
                 case .loading:
-                    ProfileView()
+                    ProgressView()
                 case .success:
-                    detailSection
-                    itemsSection
-                    popularSection
+                    Group {
+                        detailSection
+                        itemsSection
+                        popularSection
+                    }
                 case .failed:
                     Text("Error Occured")
-                default:
-                    EmptyView()
                 }
             }
             .listStyle(.grouped)
@@ -34,9 +34,9 @@ struct ProfileView: View {
                     } label: {
                         Image(systemName: "gearshape")
                     }
-                    //TODO: url below should be from user defaults or swiftdata for the user who logged in currently.
-                    if let htmlUrl = vm.user?.htmlUrl {
-                        ShareLink(item: URL(string: htmlUrl)!) {
+                    //TODO: url below should be from user defaults or swiftdata/core data for the user who logged in currently.
+                    if let htmlUrl = URL(string: vm.user?.htmlUrl ?? "") {
+                        ShareLink(item: htmlUrl) {
                             Image(systemName: "square.and.arrow.up")
                         }
                     }
