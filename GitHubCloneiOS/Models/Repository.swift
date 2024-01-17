@@ -43,7 +43,7 @@ struct Repository: Codable, Identifiable, Hashable {
     let treesURL: String
     let cloneURL, mirrorURL, svnURL, homepage: String?
     let hooksURL: String
-    let language: JSONNull?
+    let language: String?
     let forksCount, stargazersCount, watchersCount, size: Int?
     let defaultBranch: String?
     let openIssuesCount: Int?

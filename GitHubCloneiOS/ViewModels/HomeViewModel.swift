@@ -21,7 +21,6 @@ class HomeViewModel: ObservableObject {
     @Published var searchValue: String = ""
     @Published var isSearchPresented: Bool = false
     
-    
     func move(indices: IndexSet, newOffset: Int) {
         self.gitHubItems.move(fromOffsets: indices, toOffset: newOffset)
     }
