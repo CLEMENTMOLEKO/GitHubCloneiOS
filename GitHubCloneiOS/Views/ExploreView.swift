@@ -112,6 +112,7 @@ private extension ExploreView {
         } else {
             VStack {
                 Text("There was an error loading repositories.")
+                    .frame(maxWidth: .infinity)
                 Button("Try Again") {
                     Task {
                         await vm.getRepositories()

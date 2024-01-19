@@ -49,7 +49,7 @@ struct HomeView: View {
                 case .myWork:
                     MyWorksViewSort(vm: vm)
                 case .favorites:
-                    Text("Favorites view")
+                    FavoritesView()
                 case .shortcuts:
                     Text("Shortcuts view")
                 case .recents:
@@ -105,7 +105,7 @@ private extension HomeView {
                 Text("Add favorite repositories here to have quick access at any time, without having to search")
                     .multilineTextAlignment(.center)
                 Button {
-                    //TODO: Add favorites
+                    currentHomeSheet = .favorites
                 } label: {
                     Text("Add Favorites")
                         .fontWeight(.medium)
