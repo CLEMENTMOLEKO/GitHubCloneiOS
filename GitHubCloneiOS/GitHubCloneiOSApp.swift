@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct GithubCloneApp: App {
+    @StateObject var vm: GithubViewModel = .init()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
@@ -54,6 +56,7 @@ struct GithubCloneApp: App {
                     }
 
             }
+            .environmentObject(vm)
         }
     }
 }
