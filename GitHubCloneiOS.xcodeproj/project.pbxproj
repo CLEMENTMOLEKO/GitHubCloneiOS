@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */; };
+		2805C4822B5AF6D800791112 /* CreateIssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805C4812B5AF6D800791112 /* CreateIssueView.swift */; };
+		2805C4842B5AF6EB00791112 /* CreateIssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805C4832B5AF6EB00791112 /* CreateIssueViewModel.swift */; };
+		2805C4862B5B004000791112 /* AvatarListTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805C4852B5B004000791112 /* AvatarListTile.swift */; };
 		2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621E2B55147E00BC17E5 /* FavoritesView.swift */; };
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
+		28A471A52B5BAC24004E52A6 /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A471A42B5BAC24004E52A6 /* GithubViewModel.swift */; };
+		28A471A72B5BAE56004E52A6 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A471A62B5BAE56004E52A6 /* FavoritesViewModel.swift */; };
+		28A471A92B5BB09C004E52A6 /* NoconnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A471A82B5BB09C004E52A6 /* NoconnectionView.swift */; };
 		28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F22B4719DB00C0DA24 /* NotificationsView.swift */; };
 		28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F42B4724A400C0DA24 /* ProfileView.swift */; };
 		28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F62B47321200C0DA24 /* ExploreView.swift */; };
@@ -30,9 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		2805C4812B5AF6D800791112 /* CreateIssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueView.swift; sourceTree = "<group>"; };
+		2805C4832B5AF6EB00791112 /* CreateIssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueViewModel.swift; sourceTree = "<group>"; };
+		2805C4852B5B004000791112 /* AvatarListTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarListTile.swift; sourceTree = "<group>"; };
 		2830621E2B55147E00BC17E5 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		28A471A42B5BAC24004E52A6 /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
+		28A471A62B5BAE56004E52A6 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewModel.swift; path = ../../../../../.Trash/FavoritesViewModel.swift; sourceTree = "<group>"; };
+		28A471A82B5BB09C004E52A6 /* NoconnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoconnectionView.swift; sourceTree = "<group>"; };
 		28A988F22B4719DB00C0DA24 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		28A988F42B4724A400C0DA24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		28A988F62B47321200C0DA24 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 				28F343FC2B4D7A0400FDB44B /* MyWorksViewSort.swift */,
 				28F343FE2B4DE3D000FDB44B /* SettingsView.swift */,
 				2830621E2B55147E00BC17E5 /* FavoritesView.swift */,
+				2805C4812B5AF6D800791112 /* CreateIssueView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,10 +140,12 @@
 		28F198592B4668C100FE2064 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				28A471A62B5BAE56004E52A6 /* FavoritesViewModel.swift */,
 				28F1985A2B4668D500FE2064 /* HomeViewModel.swift */,
 				28A988F82B473EEE00C0DA24 /* ProfileViewModel.swift */,
 				28C834422B47D8D000255A7F /* ExploreViewModel.swift */,
-				2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */,
+				2805C4832B5AF6EB00791112 /* CreateIssueViewModel.swift */,
+				28A471A42B5BAC24004E52A6 /* GithubViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				28F343F82B4939A700FDB44B /* RepositoryView.swift */,
+				2805C4852B5B004000791112 /* AvatarListTile.swift */,
+				28A471A82B5BB09C004E52A6 /* NoconnectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -228,17 +243,22 @@
 				28F343FF2B4DE3D000FDB44B /* SettingsView.swift in Sources */,
 				28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
+				2805C4822B5AF6D800791112 /* CreateIssueView.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryView.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
+				2805C4842B5AF6EB00791112 /* CreateIssueViewModel.swift in Sources */,
+				28A471A92B5BB09C004E52A6 /* NoconnectionView.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
-				2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */,
 				2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */,
 				28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
+				28A471A72B5BAE56004E52A6 /* FavoritesViewModel.swift in Sources */,
+				28A471A52B5BAC24004E52A6 /* GithubViewModel.swift in Sources */,
 				28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */,
 				28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */,
 				28F343FD2B4D7A0400FDB44B /* MyWorksViewSort.swift in Sources */,
+				2805C4862B5B004000791112 /* AvatarListTile.swift in Sources */,
 				28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */,
 				28C834452B47FCA500255A7F /* Repository.swift in Sources */,
 				28F198582B46688200FE2064 /* HomeView.swift in Sources */,

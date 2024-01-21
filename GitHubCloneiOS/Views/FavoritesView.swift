@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    
     @StateObject var vm: FavoritesViewModel = .init()
+    @EnvironmentObject var gitHubViewModel: GithubViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -35,7 +37,7 @@ struct FavoritesView: View {
                 }
             }
             .task {
-                await vm.getUserRepositories()
+                await gitHubViewModel.getLoggedInUserRepositories(userLogin: "clementmoleko")
             }
         }
     }
@@ -53,43 +55,14 @@ private extension FavoritesView {
     
     private var unselectedRepos: some View {
         Section {
-            switch vm.requestState {
+            switch gitHubViewModel.requestState {
             case .loading:
                 ProgressView()
                     .frame(maxWidth: .infinity)
             case .success:
-                ForEach(vm.userRepositories){ repo in
-                    HStack {
-                        Image(systemName: "plus.circle.fill")
-                            .symbolRenderingMode(.multicolor)
-                            .foregroundColor(.green)
-                        AsyncImage(url: URL(string: repo.owner.avatarURL ?? "")) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(Circle())
-                        } placeholder: {
-                            Circle()
-                                .fill(.gray)
-                        }
-                        .frame(width: 30)
-                        VStack {
-                            Text(repo.owner.login)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            Text(repo.name)
-                                .font(.headline)
-                        }
-                    }
-                }
+                FavoritesList()
             case .failure:
-                VStack {
-                    Image(systemName: "network.slash")
-                        .font(.system(size: 40))
-                        .symbolRenderingMode(.multicolor)
-                        .frame(maxWidth: .infinity)
-                    Text("Error Connecting")
-                }
+                NoconnectionView()
             }
         } header: {
             Text("Select Repositories")
@@ -97,6 +70,17 @@ private extension FavoritesView {
     }
 }
 
+private struct FavoritesList: View {
+    @EnvironmentObject var githubViewModel: GithubViewModel
+    
+    var body: some View {
+        ForEach(githubViewModel.repositories){ repo in
+            AvatarListTile(showAddImageCirlce: true, avatarUrl: repo.owner.avatarURL, title: repo.owner.login, subtitle: repo.name)
+        }
+    }
+}
+
 #Preview {
     FavoritesView()
+        .environmentObject(GithubViewModel())
 }

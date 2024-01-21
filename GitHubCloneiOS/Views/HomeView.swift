@@ -19,7 +19,7 @@ struct HomeView: View {
         case shortcuts
         case recents
         //Functionality
-        case addRepository
+        case addIssue
     }
     
     var body: some View {
@@ -38,7 +38,7 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button{
-                        currentHomeSheet = .addRepository
+                        currentHomeSheet = .addIssue
                     } label: {
                         Image(systemName: "plus.circle")
                     }
@@ -54,8 +54,8 @@ struct HomeView: View {
                     Text("Shortcuts view")
                 case .recents:
                     Text("Recents View")
-                case .addRepository:
-                    Text("Add Repository Sheet")
+                case .addIssue:
+                    CreateIssueView()
                 }
             }
         }
@@ -66,7 +66,7 @@ private extension HomeView {
     var myWorks: some View {
         Section {
             ForEach(vm.gitHubItems){ item in
-                //TODO: this should be a component it's used everywhere (profile view, explore view)
+                //TODO: this should be a component it's used everywhere (profile view, explore view) and use a label
                 NavigationLink(value: item) {
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
