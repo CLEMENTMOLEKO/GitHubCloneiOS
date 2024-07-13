@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MyWorksViewSort: View {
     @Environment(\.dismiss) var dismiss
-    
-    @ObservedObject var vm: HomeViewModel
+    @EnvironmentObject var vm: HomeViewModel
     
     var body: some View {
         NavigationStack {
@@ -51,5 +50,6 @@ struct MyWorksViewSort: View {
 }
 
 #Preview {
-    MyWorksViewSort(vm: HomeViewModel())
+    MyWorksViewSort()
+        .environmentObject(HomeViewModel())
 }

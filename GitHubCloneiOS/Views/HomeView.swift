@@ -9,18 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var vm: HomeViewModel = .init()
-    @State var currentHomeSheet: HomeSection?
-    
-    enum HomeSection: Identifiable {
-        var id: Self { self }
-        //Sections
-        case myWork
-        case favorites
-        case shortcuts
-        case recents
-        //Functionality
-        case addRepository
-    }
+    @State var currentHomeSheet: HomeNavigationSheeValues?
     
     var body: some View {
         List {
@@ -40,20 +29,8 @@ struct HomeView: View {
                 }
             }
         }
-        .sheet(item: $currentHomeSheet) { item in
-            switch item {
-            case .myWork:
-                MyWorksViewSort(vm: vm)
-            case .favorites:
-                FavoritesView()
-            case .shortcuts:
-                Text("Shortcuts view")
-            case .recents:
-                Text("Recents View")
-            case .addRepository:
-                Text("Add Repository Sheet")
-            }
-        }
+        .sheet(item: $currentHomeSheet) { $0 }
+        .environmentObject(vm)
     }
 }
 
