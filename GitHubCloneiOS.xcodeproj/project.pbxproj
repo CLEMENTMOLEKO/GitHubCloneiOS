@@ -17,6 +17,8 @@
 		28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */; };
 		28B63FD62B465B7900FF0EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */; };
 		28B63FE32B465C5100FF0EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FE22B465C5100FF0EDC /* Assets.xcassets */; };
+		28C0CB812C42D63C00B31B78 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB802C42D63C00B31B78 /* View+.swift */; };
+		28C0CB832C42D70900B31B78 /* HomeNavigationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */; };
 		28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834422B47D8D000255A7F /* ExploreViewModel.swift */; };
 		28C834452B47FCA500255A7F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834442B47FCA500255A7F /* Repository.swift */; };
 		28F198582B46688200FE2064 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F198572B46688200FE2064 /* HomeView.swift */; };
@@ -41,6 +43,8 @@
 		28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCloneiOSApp.swift; sourceTree = "<group>"; };
 		28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28B63FE22B465C5100FF0EDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28C0CB802C42D63C00B31B78 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationValues.swift; sourceTree = "<group>"; };
 		28C834422B47D8D000255A7F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		28C834442B47FCA500255A7F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28F198572B46688200FE2064 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		28B63FCD2B465B7700FF0EDC /* GitHubCloneiOS */ = {
 			isa = PBXGroup;
 			children = (
+				28C0CB7F2C42D62500B31B78 /* Navigation */,
 				285AE01B2B4E803000FDCED9 /* Services */,
 				28F343F72B49398400FDB44B /* Components */,
 				28F1985C2B4668ED00FE2064 /* Models */,
@@ -111,6 +116,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		28C0CB7F2C42D62500B31B78 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		28F198562B46686900FE2064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +135,7 @@
 				28F343FC2B4D7A0400FDB44B /* MyWorksViewSort.swift */,
 				28F343FE2B4DE3D000FDB44B /* SettingsView.swift */,
 				2830621E2B55147E00BC17E5 /* FavoritesView.swift */,
+				28C0CB802C42D63C00B31B78 /* View+.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,12 +246,14 @@
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
+				28C0CB812C42D63C00B31B78 /* View+.swift in Sources */,
 				2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */,
 				2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */,
 				28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
 				28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */,
 				28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */,
+				28C0CB832C42D70900B31B78 /* HomeNavigationValues.swift in Sources */,
 				28F343FD2B4D7A0400FDB44B /* MyWorksViewSort.swift in Sources */,
 				28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */,
 				28C834452B47FCA500255A7F /* Repository.swift in Sources */,

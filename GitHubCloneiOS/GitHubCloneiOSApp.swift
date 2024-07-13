@@ -13,6 +13,7 @@ struct GithubCloneApp: App {
         WindowGroup {
             TabView {
                 HomeView()
+                    .navigationStackWithDestination(for: HomeNavigationValues.self)
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")

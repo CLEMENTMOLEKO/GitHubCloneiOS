@@ -23,40 +23,35 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                myWorks
-                favorites
-                shortcuts
-                recents
-            }
-            .navigationTitle("Home")
-            .searchable(text: $vm.searchValue, isPresented: $vm.isSearchPresented, prompt: Text("Search GitHub"))
-            .navigationDestination(for: Item.self) { value in
-                Text(value.name)
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button{
-                        currentHomeSheet = .addRepository
-                    } label: {
-                        Image(systemName: "plus.circle")
-                    }
+        List {
+            myWorks
+            favorites
+            shortcuts
+            recents
+        }
+        .navigationTitle("Home")
+        .searchable(text: $vm.searchValue, isPresented: $vm.isSearchPresented, prompt: Text("Search GitHub"))
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button{
+                    currentHomeSheet = .addRepository
+                } label: {
+                    Image(systemName: "plus.circle")
                 }
             }
-            .sheet(item: $currentHomeSheet) { item in
-                switch item {
-                case .myWork:
-                    MyWorksViewSort(vm: vm)
-                case .favorites:
-                    FavoritesView()
-                case .shortcuts:
-                    Text("Shortcuts view")
-                case .recents:
-                    Text("Recents View")
-                case .addRepository:
-                    Text("Add Repository Sheet")
-                }
+        }
+        .sheet(item: $currentHomeSheet) { item in
+            switch item {
+            case .myWork:
+                MyWorksViewSort(vm: vm)
+            case .favorites:
+                FavoritesView()
+            case .shortcuts:
+                Text("Shortcuts view")
+            case .recents:
+                Text("Recents View")
+            case .addRepository:
+                Text("Add Repository Sheet")
             }
         }
     }
@@ -67,7 +62,7 @@ private extension HomeView {
         Section {
             ForEach(vm.gitHubItems){ item in
                 //TODO: this should be a component it's used everywhere (profile view, explore view)
-                NavigationLink(value: item) {
+                NavigationLink(value: HomeNavigationValues.issues) {
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
                             .fill(item.systemImageColor)
