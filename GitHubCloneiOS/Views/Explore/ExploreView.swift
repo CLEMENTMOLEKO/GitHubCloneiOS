@@ -102,14 +102,15 @@ private extension ExploreView {
     
     @ViewBuilder
     private var repositoryList: some View {
-        if vm.isLoading {
-            ProgressView()
-        } else if !vm.repositories.isEmpty {
+        switch vm.repositoriesState {
+        case .loading:
+            ProfileView()
+        case .success:
             ForEach(vm.repositories) { repository in
                 //maybe pass the id and make the request on the specific component for lazy loading?
                 RepositoryCardView(repository: repository)
             }
-        } else {
+        case .failure:
             VStack {
                 Text("There was an error loading repositories.")
                     .frame(maxWidth: .infinity)

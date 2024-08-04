@@ -54,19 +54,8 @@ private extension ProfileView {
     private var detailSection: some View {
         Section {
             HStack {
-                AsyncImage(url: URL(string: vm.user?.avatarUrl ?? "")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(Circle())
-                } placeholder: {
-                    Circle()
-                        .fill(.gray)
-                        .overlay(
-                            ProgressView()
-                        )
-                }
-                .frame(width: 80)
+                CachedAvatarView(imageKey: vm.user?.avatarUrl ?? "", imageUrl: vm.user?.avatarUrl ?? "")
+                    .frame(width: 80)
                 Text(vm.user?.login.uppercased() ?? "")
                 Spacer()
             }
@@ -111,18 +100,10 @@ private extension ProfileView {
         Section {
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    AsyncImage(url: URL(string: vm.user?.avatarUrl ?? "")) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Circle()
-                            .fill(.gray)
-                            .overlay(
-                                ProgressView()
-                            )
-                    }
+                    CachedAvatarView(
+                        imageKey: vm.user?.avatarUrl ?? "",
+                        imageUrl: vm.user?.avatarUrl ?? ""
+                    )
                     .frame(width: 30)
                     
                     Text(vm.user?.login.uppercased() ?? "")

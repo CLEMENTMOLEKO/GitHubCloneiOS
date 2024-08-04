@@ -8,35 +8,54 @@
 import Foundation
 
 struct APIService {
-    let urlEndPoint: String
+    func getJSONData<T: Decodable>(
+        from urlString: String,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate
+    ) async -> Result<T, APIError> {
+        let dataResult = await getData(from: urlString)
+        switch dataResult {
+        case .success(let data):
+            return decodeJsonData(
+                data,
+                keyDecodingStrategy: keyDecodingStrategy,
+                dateDecodingStrategy: dateDecodingStrategy
+            )
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
     
-    func getJSONData<T: Decodable>(keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
-                                   dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate) async throws -> T {
-        guard let url = URL(string: urlEndPoint) else { throw APIError.invalidEndpoint}
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard !data.isEmpty else { throw APIError.noData }
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw APIError.invalidResponse }
-        
+    func getData(from urlString: String) async -> Result<Data, APIError> {
+        guard let url = URL(string: urlString) else { return .failure(.invalidEndpoint)}
+       
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard !data.isEmpty else { return .failure(.noData)}
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 else { return .failure(.invalidResponse)}
+            return .success(data)
+        } catch {
+            return .failure(.failedToDecode)
+        }
+    }
+    
+    private func decodeJsonData<T: Decodable>(
+        _ data: Data,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy
+    ) -> Result<T, APIError> {
         do {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = keyDecodingStrategy
             decoder.dateDecodingStrategy = dateDecodingStrategy
-            return try decoder.decode(T.self, from: data)
+            let decodedJsonData = try decoder.decode(T.self, from: data)
+            return .success(decodedJsonData)
         } catch let error{
-            
             //TODO: remove prints below for testing.
             print("APIService")
             print(error)
-            throw APIError.failedToDecode
+            return .failure(.failedToDecode)
         }
-    }
-    
-    enum APIError: Error {
-        case invalidEndpoint
-        case invalidResponse
-        case failedToDecode
-        case noData
     }
 }

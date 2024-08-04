@@ -14,19 +14,10 @@ struct RepositoryCardView: View {
         Section {
             VStack(alignment: .leading, spacing: 10) {
                 HStack{
-                    AsyncImage(url: URL(string: repository.owner.avatarURL ?? "")) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Circle()
-                            .fill(.gray)
-                            .overlay(
-                                Image(systemName: "person.fill")
-                                    .font(.caption2)
-                            )
-                    }
+                    CachedAvatarView(
+                        imageKey: "\(repository.owner.id)",
+                        imageUrl: repository.owner.avatarURL ?? ""
+                    )
                     .frame(width: 20)
                     Text("\(repository.owner.login) / \(repository.name)")
                         .font(.system(size: 14))

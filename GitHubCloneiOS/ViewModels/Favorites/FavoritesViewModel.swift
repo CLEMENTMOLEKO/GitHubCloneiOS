@@ -18,14 +18,18 @@ final class FavoritesViewModel: ObservableObject {
     
     func getUserRepositories() async {
         //TODO: remember user should come authenticated user or use user defaults or swiftdata/core data if auth not implemented yet.
-        let apiService = APIService(urlEndPoint: "https://api.github.com/users/clementmoleko/repos")
-        do {
-            let repositoriesResult: [Repository] = try await apiService.getJSONData(dateDecodingStrategy: .iso8601)
+        let apiService = APIService()
+        let repositoriesResult: Result<[Repository], APIError> = await apiService.getJSONData(
+            from: "https://api.github.com/users/clementmoleko/repos",
+            dateDecodingStrategy: .iso8601
+        )
+        switch repositoriesResult {
+        case .success(let repos):
             await MainActor.run {
-                userRepositories = repositoriesResult
+                userRepositories = repos
                 requestState = .success
             }
-        } catch {
+        case .failure(let failure):
             requestState = .failure
         }
     }

@@ -12,7 +12,7 @@ final class ExploreViewModel : ObservableObject {
     
     @Published var searchValue = ""
     @Published var repositories: [Repository] = []
-    @Published var isLoading = false //TODO: create an enum for states of success, failure and loading.
+    @Published var repositoriesState: RepositoriesState = .loading
     
     let gitHubItems: [ExploreItem] = [
         ExploreItem(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
@@ -20,13 +20,19 @@ final class ExploreViewModel : ObservableObject {
     ]
     
     func getRepositories() async {
-        let apiService = APIService(urlEndPoint: "https://api.github.com/repositories")
-        do {
-            isLoading = true
-            repositories = try await apiService.getJSONData()
-            isLoading = false
-        } catch {
-            isLoading = false
+        let apiService = APIService()
+        let repositoriesResult: Result<[Repository], APIError> = await apiService.getJSONData(from: "https://api.github.com/repositories")
+        
+        switch repositoriesResult {
+        case .success(let apiRepositories):
+            repositories = apiRepositories
+            repositoriesState = .success
+        case .failure(let failure):
+            repositoriesState = .failure
         }
     }
+}
+
+enum RepositoriesState {
+    case loading, success, failure
 }

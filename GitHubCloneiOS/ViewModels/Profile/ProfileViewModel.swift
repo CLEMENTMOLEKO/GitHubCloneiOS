@@ -24,14 +24,18 @@ final class ProfileViewModel: ObservableObject {
     
     func getUser() async {
         //TODO: user url should come from logged in user, for now we can use user defaults.
-        let apiService = APIService(urlEndPoint: "https://api.github.com/users/clementmoleko")
-        do {
-            userState = .loading
-            user = try await apiService.getJSONData(keyDecodingStrategy: .convertFromSnakeCase,
-                                                    dateDecodingStrategy: .iso8601)
+        let apiService = APIService()
+
+        let userResult: Result<User, APIError> = await apiService.getJSONData(
+            from: "https://api.github.com/users/clementmoleko",
+            keyDecodingStrategy: .convertFromSnakeCase,
+            dateDecodingStrategy: .iso8601
+        )
+        switch userResult {
+        case .success(let apiUser):
+            user = apiUser
             userState = .success
-        } catch let error {
-            print(error)
+        case .failure(_):
             userState = .failed
         }
     }
