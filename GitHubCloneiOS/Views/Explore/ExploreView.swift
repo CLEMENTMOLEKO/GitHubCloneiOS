@@ -104,7 +104,7 @@ private extension ExploreView {
     private var repositoryList: some View {
         switch vm.repositoriesState {
         case .loading:
-            ProfileView()
+            ProgressView()
         case .success:
             ForEach(vm.repositories) { repository in
                 //maybe pass the id and make the request on the specific component for lazy loading?
