@@ -13,10 +13,10 @@ final class ProfileViewModel: ObservableObject {
         case loading, success, failed
     }
     
-    let gitHubItems: [Item] = [
-        Item(name: "Repositories", systemImage: "checkmark.rectangle.stack.fill", systemImageColor: .gray),
-        Item(name: "Starred", systemImage: "star", systemImageColor: .yellow),
-        Item(name: "Organizations", systemImage: "building.2", systemImageColor: .orange),
+    let gitHubItems: [ProfileItem] = [
+        ProfileItem(name: "Repositories", systemImage: "checkmark.rectangle.stack.fill", systemImageColor: .gray),
+        ProfileItem(name: "Starred", systemImage: "star", systemImageColor: .yellow),
+        ProfileItem(name: "Organizations", systemImage: "building.2", systemImageColor: .orange),
     ]
     
     @Published var user: User? = nil

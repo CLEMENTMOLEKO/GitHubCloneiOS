@@ -39,7 +39,7 @@ private extension HomeView {
         Section {
             ForEach(vm.gitHubItems){ item in
                 //TODO: this should be a component it's used everywhere (profile view, explore view)
-                NavigationLink(value: HomeNavigationValues.issues) {
+                NavigationLink(value: item.value) {
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
                             .fill(item.systemImageColor)

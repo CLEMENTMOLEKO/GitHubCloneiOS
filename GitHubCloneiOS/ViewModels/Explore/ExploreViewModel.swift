@@ -14,9 +14,9 @@ final class ExploreViewModel : ObservableObject {
     @Published var repositories: [Repository] = []
     @Published var isLoading = false //TODO: create an enum for states of success, failure and loading.
     
-    let gitHubItems: [Item] = [
-        Item(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
-        Item(name: "Awesome LIsts", systemImage: "face.smiling", systemImageColor: .pink),
+    let gitHubItems: [ExploreItem] = [
+        ExploreItem(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
+        ExploreItem(name: "Awesome LIsts", systemImage: "face.smiling", systemImageColor: .pink),
     ]
     
     func getRepositories() async {

@@ -30,7 +30,8 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
 //        case .pullRequests:
 //        case .discussions:
 //        case .projects:
-//        case .repositories:
+        case .repositories:
+            RepositoriesView()
 //        case .starred:
 //        case .organizations:
         default:

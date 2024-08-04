@@ -1,5 +1,5 @@
 //
-//  RepositoryView.swift
+//  RepositoryCardView.swift
 //  GitHubCloneiOS
 //
 //  Created by Clement Skosana on 2024/01/06.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RepositoryView: View {
+struct RepositoryCardView: View {
     let repository: Repository
     
     var body: some View {

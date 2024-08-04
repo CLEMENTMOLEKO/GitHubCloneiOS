@@ -107,7 +107,7 @@ private extension ExploreView {
         } else if !vm.repositories.isEmpty {
             ForEach(vm.repositories) { repository in
                 //maybe pass the id and make the request on the specific component for lazy loading?
-                RepositoryView(repository: repository)
+                RepositoryCardView(repository: repository)
             }
         } else {
             VStack {

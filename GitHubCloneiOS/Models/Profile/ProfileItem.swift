@@ -1,14 +1,13 @@
 //
-//  Item.swift
+//  ProfileItem.swift
 //  GitHubCloneiOS
 //
-//  Created by Clement Skosana on 2024/01/04.
+//  Created by Clement Skosana on 2024/08/04.
 //
 
-import Foundation
 import SwiftUI
 
-struct Item: Identifiable, Hashable {
+struct ProfileItem: Item {
     let id = UUID()
     let name: String
     let systemImage: String
