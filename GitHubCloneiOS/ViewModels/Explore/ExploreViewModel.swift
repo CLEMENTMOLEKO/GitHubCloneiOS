@@ -9,10 +9,9 @@ import Foundation
 
 @MainActor
 final class ExploreViewModel : ObservableObject {
-    
     @Published var searchValue = ""
     @Published var repositories: [Repository] = []
-    @Published var repositoriesState: RepositoriesState = .loading
+    @Published var repositoriesState: LoadingState = .loading
     
     let gitHubItems: [ExploreItem] = [
         ExploreItem(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
@@ -31,8 +30,4 @@ final class ExploreViewModel : ObservableObject {
             repositoriesState = .failure
         }
     }
-}
-
-enum RepositoriesState {
-    case loading, success, failure
 }

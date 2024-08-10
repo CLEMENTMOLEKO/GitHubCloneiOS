@@ -16,14 +16,14 @@ class CachedAvatarViewModel: ObservableObject {
     @Published var uiImage: UIImage? = nil
     
     init(imageKey: String) {
-        self.imageKey = imageKey
+        self.imageKey = "Avatar_\(imageKey)"
     }
     
     func getImage(from urlString: String) async {
-        if let cachedImage = await imageCacheManager.getObject(forkey: imageKey) {
+        if let imageData = await imageCacheManager.getObject(forkey: imageKey) {
             print("Getting cachedImage", imageKey)
             await MainActor.run {
-                uiImage = cachedImage
+                uiImage = UIImage(data: imageData)
                 imageState = .success
             }
         } else {
@@ -42,7 +42,7 @@ class CachedAvatarViewModel: ObservableObject {
                     uiImage = image
                     imageState = .success
                 }
-                await imageCacheManager.cacheObject(key: imageKey, object: image)
+                await imageCacheManager.cacheObject(key: imageKey, object: imageData)
             } else {
                 await MainActor.run {
                     imageState = .failure

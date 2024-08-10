@@ -22,7 +22,7 @@ struct ProfileView: View {
                         itemsSection
                         popularSection
                     }
-                case .failed:
+                case .failure:
                     Text("Error Occured")
                 }
             }

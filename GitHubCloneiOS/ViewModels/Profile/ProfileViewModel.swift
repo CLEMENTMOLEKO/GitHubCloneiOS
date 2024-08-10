@@ -9,10 +9,6 @@ import Foundation
 
 @MainActor
 final class ProfileViewModel: ObservableObject {
-    enum UserState {
-        case loading, success, failed
-    }
-    
     let gitHubItems: [ProfileItem] = [
         ProfileItem(name: "Repositories", systemImage: "checkmark.rectangle.stack.fill", systemImageColor: .gray),
         ProfileItem(name: "Starred", systemImage: "star", systemImageColor: .yellow),
@@ -20,13 +16,13 @@ final class ProfileViewModel: ObservableObject {
     ]
     
     @Published var user: User? = nil
-    @Published var userState: UserState = .loading
+    @Published var userState: LoadingState = .loading
     
     func getUser() async {
-        //TODO: user url should come from logged in user, for now we can use user defaults.
         let apiService = APIService()
 
         let userResult: Result<User, APIError> = await apiService.getJSONData(
+            //TODO: user url should come from logged in user, for now we can use user defaults.
             from: "https://api.github.com/users/clementmoleko",
             keyDecodingStrategy: .convertFromSnakeCase,
             dateDecodingStrategy: .iso8601
@@ -36,7 +32,7 @@ final class ProfileViewModel: ObservableObject {
             user = apiUser
             userState = .success
         case .failure(_):
-            userState = .failed
+            userState = .failure
         }
     }
 }

@@ -18,11 +18,11 @@ struct Repository: Codable, Identifiable, Hashable {
     }
     
     let id: Int
-    let nodeID, name, fullName: String
+    let name, fullName: String
     let owner: Owner
     let welcomePrivate: Bool
     let htmlURL: String
-    let description: String?
+    let nodeID, description: String?
     let fork: Bool
     let url: String
     let archiveURL, assigneesURL, blobsURL, branchesURL: String
@@ -52,7 +52,7 @@ struct Repository: Codable, Identifiable, Hashable {
     let hasIssues, hasProjects, hasWiki, hasPages: Bool?
     let hasDownloads, hasDiscussions, archived, disabled: Bool?
     let visibility: String?
-    let pushedAt, createdAt, updatedAt: Date?
+    let pushedAt, createdAt, updatedAt: String?
     let permissions: Permissions?
     let securityAndAnalysis: SecurityAndAnalysis?
     

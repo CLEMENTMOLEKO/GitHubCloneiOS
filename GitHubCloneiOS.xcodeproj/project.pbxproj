@@ -14,6 +14,7 @@
 		2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E58A2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift */; };
 		2800E58E2C5FCB0800CD4E43 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E58D2C5FCB0800CD4E43 /* APIError.swift */; };
 		2800E5902C5FCF6900CD4E43 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E58F2C5FCF6900CD4E43 /* CacheManager.swift */; };
+		2800E5932C60071300CD4E43 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5922C60071300CD4E43 /* LoadingState.swift */; };
 		2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */; };
 		2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621E2B55147E00BC17E5 /* FavoritesView.swift */; };
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
@@ -50,6 +51,7 @@
 		2800E58A2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAvatarViewModel.swift; sourceTree = "<group>"; };
 		2800E58D2C5FCB0800CD4E43 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		2800E58F2C5FCF6900CD4E43 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		2800E5922C60071300CD4E43 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2830621E2B55147E00BC17E5 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		2800E5852C5FBA2D00CD4E43 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2800E5912C60070400CD4E43 /* Enums */,
 				2800E58C2C5FCAD000CD4E43 /* Errors */,
 				2800E5862C5FBA3A00CD4E43 /* Protocols */,
 				28F343F52B488A7E00FDB44B /* User.swift */,
@@ -156,6 +159,14 @@
 				2800E58D2C5FCB0800CD4E43 /* APIError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		2800E5912C60070400CD4E43 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2800E5922C60071300CD4E43 /* LoadingState.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		285AE01B2B4E803000FDCED9 /* Services */ = {
@@ -460,6 +471,7 @@
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				2800E57E2C5FB82F00CD4E43 /* MyWorkItem.swift in Sources */,
 				2800E5902C5FCF6900CD4E43 /* CacheManager.swift in Sources */,
+				2800E5932C60071300CD4E43 /* LoadingState.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
 				28C0CB812C42D63C00B31B78 /* View+.swift in Sources */,
 				28F867592C5FAE83009F3CCC /* RepositoriesView.swift in Sources */,
