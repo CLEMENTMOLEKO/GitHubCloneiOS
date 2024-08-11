@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension View {
-    func navigationStackWithDestination<T>(for value: T.Type) -> some View where T: Hashable & View {
-        NavigationStack {
+    func navigationStackWithDestination<T>(for value: T.Type, path: Binding<NavigationPath>) -> some View where T: Hashable & View {
+        NavigationStack(path: path) {
             self
                 .navigationDestination(for: value) { $0 }
         }

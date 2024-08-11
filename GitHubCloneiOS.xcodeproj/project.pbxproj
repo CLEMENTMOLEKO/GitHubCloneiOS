@@ -15,6 +15,10 @@
 		2800E58E2C5FCB0800CD4E43 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E58D2C5FCB0800CD4E43 /* APIError.swift */; };
 		2800E5902C5FCF6900CD4E43 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E58F2C5FCF6900CD4E43 /* CacheManager.swift */; };
 		2800E5932C60071300CD4E43 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5922C60071300CD4E43 /* LoadingState.swift */; };
+		2800E5962C694C9700CD4E43 /* RepositoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5952C694C9700CD4E43 /* RepositoriesListView.swift */; };
+		2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */; };
+		2800E59D2C694E3E00CD4E43 /* RepositoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E59C2C694E3E00CD4E43 /* RepositoryDetailsViewModel.swift */; };
+		2800E59F2C69547C00CD4E43 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E59E2C69547C00CD4E43 /* NavigationManager.swift */; };
 		2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */; };
 		2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621E2B55147E00BC17E5 /* FavoritesView.swift */; };
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
@@ -52,6 +56,10 @@
 		2800E58D2C5FCB0800CD4E43 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		2800E58F2C5FCF6900CD4E43 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		2800E5922C60071300CD4E43 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		2800E5952C694C9700CD4E43 /* RepositoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListView.swift; sourceTree = "<group>"; };
+		2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsView.swift; sourceTree = "<group>"; };
+		2800E59C2C694E3E00CD4E43 /* RepositoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		2800E59E2C69547C00CD4E43 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2830621E2B55147E00BC17E5 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -169,11 +177,36 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		2800E5942C694C7800CD4E43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2800E5952C694C9700CD4E43 /* RepositoriesListView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2800E5972C694DC600CD4E43 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */,
+			);
+			path = RepositoryDetails;
+			sourceTree = "<group>";
+		};
+		2800E59B2C694E0700CD4E43 /* RepositoryDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2800E59C2C694E3E00CD4E43 /* RepositoryDetailsViewModel.swift */,
+			);
+			path = RepositoryDetails;
+			sourceTree = "<group>";
+		};
 		285AE01B2B4E803000FDCED9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				2800E58F2C5FCF6900CD4E43 /* CacheManager.swift */,
 				285AE01C2B4E804F00FDCED9 /* APIService.swift */,
+				2800E59E2C69547C00CD4E43 /* NavigationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,6 +262,7 @@
 		28F198562B46686900FE2064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2800E5972C694DC600CD4E43 /* RepositoryDetails */,
 				2800E57B2C5FB54700CD4E43 /* Common */,
 				28F867642C5FB3F4009F3CCC /* Settings */,
 				28F867632C5FB390009F3CCC /* EditMyWorks */,
@@ -247,6 +281,7 @@
 		28F198592B4668C100FE2064 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2800E59B2C694E0700CD4E43 /* RepositoryDetails */,
 				2800E5892C5FBAFE00CD4E43 /* Common */,
 				28F8676B2C5FB450009F3CCC /* Repositories */,
 				28F8676A2C5FB442009F3CCC /* EditMyWorks */,
@@ -304,6 +339,7 @@
 		28F867602C5FB35A009F3CCC /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				2800E5942C694C7800CD4E43 /* Components */,
 				28F867582C5FAE83009F3CCC /* RepositoriesView.swift */,
 			);
 			path = Repositories;
@@ -466,12 +502,15 @@
 				2800E5842C5FB99F00CD4E43 /* ProfileItem.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryCardView.swift in Sources */,
+				2800E59D2C694E3E00CD4E43 /* RepositoryDetailsViewModel.swift in Sources */,
+				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				2800E57E2C5FB82F00CD4E43 /* MyWorkItem.swift in Sources */,
 				2800E5902C5FCF6900CD4E43 /* CacheManager.swift in Sources */,
 				2800E5932C60071300CD4E43 /* LoadingState.swift in Sources */,
+				2800E5962C694C9700CD4E43 /* RepositoriesListView.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
 				28C0CB812C42D63C00B31B78 /* View+.swift in Sources */,
 				28F867592C5FAE83009F3CCC /* RepositoriesView.swift in Sources */,
@@ -485,6 +524,7 @@
 				28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */,
 				28C0CB852C42DCE000B31B78 /* HomeNavigationSheetValues.swift in Sources */,
 				28C0CB832C42D70900B31B78 /* HomeNavigationValues.swift in Sources */,
+				2800E59F2C69547C00CD4E43 /* NavigationManager.swift in Sources */,
 				28F343FD2B4D7A0400FDB44B /* MyWorksViewSort.swift in Sources */,
 				28C0CB872C42DE2900B31B78 /* MyWorksSortViewModel.swift in Sources */,
 				28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */,

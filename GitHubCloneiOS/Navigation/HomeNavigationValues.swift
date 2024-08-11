@@ -13,6 +13,7 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
     case discussions
     case projects
     case repositories
+    case repositoryDetail(ownerName: String , repoName: String)
     case starred
     case organizations
     
@@ -32,6 +33,8 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
 //        case .projects:
         case .repositories:
             RepositoriesView()
+        case .repositoryDetail(let ownerName, let repoName):
+            RepositoryDetailsView(ownerName: ownerName, repoName: repoName)
 //        case .starred:
 //        case .organizations:
         default:

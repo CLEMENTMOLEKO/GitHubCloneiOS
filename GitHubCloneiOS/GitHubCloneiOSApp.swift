@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct GithubCloneApp: App {
+    @StateObject var navigationManager = NavigationManager()
+    
     var body: some Scene {
         WindowGroup {
             TabView {
                 HomeView()
-                    .navigationStackWithDestination(for: HomeNavigationValues.self)
+                    .navigationStackWithDestination(
+                        for: HomeNavigationValues.self,
+                        path: $navigationManager.routes
+                    )
+                    .environmentObject(navigationManager)
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
