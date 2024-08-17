@@ -30,7 +30,6 @@ struct HomeView: View {
             }
         }
         .sheet(item: $currentHomeSheet) { $0 }
-        .environmentObject(vm)
     }
 }
 

@@ -1,21 +1,21 @@
 //
-//  MyWorksViewSort.swift
+//  EditMyWorksView.swift
 //  GitHubCloneiOS
 //
-//  Created by Clement Skosana on 2024/01/09.
+//  Created by Clement Skosana on 2024/08/17.
 //
 
 import SwiftUI
 
-struct MyWorksViewSort: View {
+struct EditMyWorksView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var vm: HomeViewModel
+    @StateObject var viewModel: EditMyWorksViewModel = .init()
     
     var body: some View {
         NavigationStack {
-            List(selection: $vm.selectedGitHubItems) {
+            List(selection: $viewModel.selectedGitHubItems) {
                 //Used id: \.self even though it confirms to identifiable because of selection, unless I make selection a set of type UUID
-                ForEach(vm.gitHubItems, id: \.self){ item in
+                ForEach(viewModel.gitHubItems){ item in
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
                             .fill(item.systemImageColor)
@@ -31,7 +31,7 @@ struct MyWorksViewSort: View {
                     }
                     .frame(height: 37)
                 }
-                .onMove(perform: vm.move)
+                .onMove(perform: viewModel.move)
             }
             .navigationTitle("Edit My Works")
             .toolbarTitleDisplayMode(.inline)
@@ -46,10 +46,8 @@ struct MyWorksViewSort: View {
         }
         .environment(\.editMode, .constant(EditMode.active))
     }
-    
 }
 
 #Preview {
-    MyWorksViewSort()
-        .environmentObject(HomeViewModel())
+    EditMyWorksView()
 }

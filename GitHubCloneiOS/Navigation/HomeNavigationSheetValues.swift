@@ -21,7 +21,7 @@ enum HomeNavigationSheeValues: Identifiable, Hashable, View {
     var body: some View {
         switch self {
         case .myWork:
-            MyWorksViewSort()
+            EditMyWorksView()
         case .favorites:
             FavoritesView()
         case .shortcuts:
