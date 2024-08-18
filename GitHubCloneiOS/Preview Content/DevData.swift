@@ -20,5 +20,3 @@ struct DevData {
         MyWorkItem(name: "Organizations", systemImage: "building.2", systemImageColor: .orange, value: .organizations),
     ]
 }
-
-

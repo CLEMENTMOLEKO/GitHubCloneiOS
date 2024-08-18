@@ -247,6 +247,7 @@
 		28B63FD42B465B7900FF0EDC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				28E394EE2C709F3D005D79C3 /* DevData.swift */,
 				28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -302,7 +303,6 @@
 				2800E5822C5FB99000CD4E43 /* Profile */,
 				2800E57F2C5FB92500CD4E43 /* Explore */,
 				2800E57C2C5FB80100CD4E43 /* EditMyWork */,
-				28E394EE2C709F3D005D79C3 /* DevData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
