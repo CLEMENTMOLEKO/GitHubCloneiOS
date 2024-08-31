@@ -12,6 +12,7 @@ struct RepositoryDetailsView: View {
     let repoName: String
     
     @StateObject var viewModel: RepositoryDetailsViewModel = .init()
+    @State var isExpanded = false
     
     var body: some View {
         List {
@@ -72,7 +73,7 @@ struct RepositoryDetailsView: View {
             .listRowBackground(Color.clear)
             
             Section {
-                ForEach(DevData.githubItems){ item in
+                ForEach(getGitHubItemsInRange(..<3)){ item in
                     //TODO: this should be a component it's used everywhere (profile view, explore view)
                     NavigationLink(value: item.value) {
                         HStack {
@@ -90,6 +91,42 @@ struct RepositoryDetailsView: View {
                         }
                         .frame(height: 37) //Hot fix.
                     }
+                }
+                DisclosureGroup(isExpanded: $isExpanded) {
+                    ForEach(getGitHubItemsInRange(3...)){ item in
+                        //TODO: this should be a component it's used everywhere (profile view, explore view)
+                        NavigationLink(value: item.value) {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(item.systemImageColor)
+                                    .frame(width: 35, height: 35)
+                                    .overlay{
+                                        Image(systemName: item.systemImage)
+                                            .font(.system(size: CGFloat(15)))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.white)
+                                    }
+                                    
+                                Text(item.name)
+                            }
+                            .frame(height: 37) //Hot fix.
+                        }
+                    }
+                } label: {
+                    HStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color(uiColor: .systemFill))
+                            .frame(width: 35, height: 35)
+                            .overlay{
+                                Image(systemName: "ellipsis")
+                                    .font(.system(size: CGFloat(15)))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            
+                        Text(isExpanded ? "Less" : "More")
+                    }
+                    .frame(height: 37) //Hot fix.
                 }
             }
         }
@@ -112,6 +149,19 @@ struct RepositoryDetailsView: View {
         }
     }
 }
+
+private func getGitHubItemsInRange<R: RangeExpression>(_ range: R) -> [MyWorkItem] where R.Bound == Int {
+    let fullRange = range.relative(to: 0..<DevData.githubItems.count)
+    let startIndex = fullRange.lowerBound
+    let endIndex = fullRange.upperBound
+
+    guard startIndex < endIndex else {
+        return []
+    }
+
+    return Array(DevData.githubItems[fullRange])
+}
+
 
 #Preview {
     NavigationStack {
