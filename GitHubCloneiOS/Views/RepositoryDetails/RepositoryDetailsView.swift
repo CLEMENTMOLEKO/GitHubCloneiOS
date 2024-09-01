@@ -129,6 +129,71 @@ struct RepositoryDetailsView: View {
                     .frame(height: 37) //Hot fix.
                 }
             }
+            
+            Section {
+                NavigationLink(destination: Text("Repos Code")) {
+                    HStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color(uiColor: .systemFill))
+                            .frame(width: 35, height: 35)
+                            .overlay{
+                                Image(systemName: "ellipsis.curlybraces")
+                                    .font(.system(size: CGFloat(15)))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            
+                        Text("Code")
+                    }
+                    .frame(height: 37) //Hot fix.
+                }
+                
+                NavigationLink(destination: Text("Commits")) {
+                    HStack {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color(uiColor: .systemFill))
+                            .frame(width: 35, height: 35)
+                            .overlay{
+                                Image(systemName: "arrowshape.right.circle")
+                                    .font(.system(size: CGFloat(15)))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            
+                        Text("Commits")
+                    }
+                    .badge(10)
+                    .frame(height: 37) //Hot fix.
+                }
+            } header: {
+                LabeledContent {
+                    Button("Change branch") {
+                        //
+                    }
+                } label: {
+                    Label(
+                        title: { Text("master") },
+                        icon: { Image(systemName: "arrow.triangle.branch") }
+                    )
+                }
+            }
+            .headerProminence(.increased)
+            
+            Section {
+                Text("This is the read me for my perfect repo. I'm literally cloning chatGPT and Claude. Can't touch me.")
+            } header: {
+                LabeledContent {
+                    Button("Edit") {
+                        //
+                    }
+                } label: {
+                    Label(
+                        title: { Text("README.md") },
+                        icon: { Image(systemName: "info.circle") }
+                    )
+                }
+            }
+            .headerProminence(.increased)
         }
         .listStyle(.grouped)
         .toolbar {
@@ -138,12 +203,47 @@ struct RepositoryDetailsView: View {
                     Image(systemName: "plus.circle")
                         .imageScale(.large)
                 }
-                
-                Button {
+            }
+            
+            ToolbarItem {
+                Menu {
+                    Section {
+                        Button(action: {
+                        }) {
+                            HStack {
+                                Text("Share via..")
+                                Spacer()
+                                Image(systemName: "square.and.arrow.up")
+                            }
+                        }
+                    }
                     
+                    Section {
+                        Button(action: {
+                        }) {
+                            LabeledContent("Edit description") {
+                                Image(systemName: "pencil")
+                            }
+                        }
+                    }
+                    
+                    Section {
+                        Button(action: {
+                        }) {
+                            LabeledContent("Report") {
+                                Image(systemName: "exclamationmark.bubble")
+                            }
+                        }
+                        
+                        Button(action: {
+                        }) {
+                            LabeledContent("Add to favorites") {
+                                Image(systemName: "plus")
+                            }
+                        }
+                    }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .imageScale(.large)
                 }
             }
         }
@@ -167,4 +267,5 @@ private func getGitHubItemsInRange<R: RangeExpression>(_ range: R) -> [MyWorkIte
     NavigationStack {
         RepositoryDetailsView(ownerName: "ClementMoleko", repoName: "GitHubCloneiOS")
     }
+    .preferredColorScheme(.dark)
 }
