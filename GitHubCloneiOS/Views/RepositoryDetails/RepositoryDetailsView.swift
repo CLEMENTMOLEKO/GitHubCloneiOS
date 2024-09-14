@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct RepositoryDetailsView: View {
-    let ownerName: String
-    let repoName: String
+    let repository: Repository
     
     @StateObject var viewModel: RepositoryDetailsViewModel = .init()
     @State var isExpanded = false
@@ -20,29 +19,33 @@ struct RepositoryDetailsView: View {
                 HStack {
                     Circle()
                         .frame(width: 25)
-                    Text("CLEMENT MOLEKO")
+                    Text(repository.owner.login)
                     Spacer()
                 }
-                Text("GithubCloneiOs")
+                Text(repository.name)
                     .font(.title)
                     .fontWeight(.bold)
-                HStack(spacing: 4) {
-                    Image(systemName: "42.circle")
-                    Text("Private")
+                
+                if repository.welcomePrivate {
+                    HStack(spacing: 4) {
+                        Image(systemName: "lock")
+                        Text("Private")
+                    }
+                    .font(.callout)
                 }
-                .font(.caption)
+                
                 HStack(spacing: 12) {
                     HStack(spacing: 4){
                         Image(systemName: "star")
-                        Text("\(Text("1k").fontWeight(.semibold)) Stars")
+                        Text("\(Text("\(repository.stargazersCount ?? 0)").fontWeight(.semibold)) Stars")
                     }
-                    .font(.caption)
+                    .font(.callout)
                    
                     HStack(spacing: 4) {
                         Image(systemName: "star")
-                        Text("\(Text("21").fontWeight(.semibold)) Forks")
+                        Text("\(Text("\(repository.forksCount ?? 0)").fontWeight(.semibold)) Forks")
                     }
-                    .font(.caption)
+                    .font(.callout)
                 }
                 HStack {
                     RoundedRectangle(cornerRadius: 5)
@@ -162,7 +165,7 @@ struct RepositoryDetailsView: View {
                             
                         Text("Commits")
                     }
-                    .badge(10)
+                    .badge(10) //TODO: get commit counts, it's ridiculous that is not on the json object
                     .frame(height: 37) //Hot fix.
                 }
             } header: {
@@ -262,10 +265,10 @@ private func getGitHubItemsInRange<R: RangeExpression>(_ range: R) -> [MyWorkIte
     return Array(DevData.githubItems[fullRange])
 }
 
-
-#Preview {
-    NavigationStack {
-        RepositoryDetailsView(ownerName: "ClementMoleko", repoName: "GitHubCloneiOS")
-    }
-    .preferredColorScheme(.dark)
-}
+//TODO: Create sample data for previews
+//#Preview {
+//    NavigationStack {
+//        RepositoryDetailsView(.)
+//    }
+//    .preferredColorScheme(.dark)
+//}

@@ -51,8 +51,7 @@ struct RepositoriesListView: View {
                 .onTapGesture {
                     navigationManager.navigate(
                         to: .repositoryDetail(
-                            ownerName: repository.owner.login,
-                            repoName: repository.name
+                            repository: repository
                         )
                     )
                 }

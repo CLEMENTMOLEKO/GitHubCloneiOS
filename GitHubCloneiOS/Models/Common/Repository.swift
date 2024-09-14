@@ -56,6 +56,7 @@ struct Repository: Codable, Identifiable, Hashable {
     let permissions: Permissions?
     let securityAndAnalysis: SecurityAndAnalysis?
     
+    // TODO: remove the below coding keys and set the decoding strategy as snake case.
     enum CodingKeys: String, CodingKey {
         case id
         case nodeID = "node_id"
