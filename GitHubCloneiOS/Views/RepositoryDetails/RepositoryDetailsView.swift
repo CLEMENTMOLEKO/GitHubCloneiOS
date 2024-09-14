@@ -17,8 +17,11 @@ struct RepositoryDetailsView: View {
         List {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Circle()
-                        .frame(width: 25)
+                    CachedAvatarView(
+                        imageKey: "\(repository.owner.id)",
+                        imageUrl: repository.owner.avatarURL ?? ""
+                    )
+                    .frame(width: 25)
                     Text(repository.owner.login)
                     Spacer()
                 }
