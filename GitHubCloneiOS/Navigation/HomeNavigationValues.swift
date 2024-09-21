@@ -16,6 +16,7 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
     case repositoryDetail(repository: Repository)
     case starred
     case organizations
+    case commits(owner: String, repoName: String)
     
     var id: Self { self }
     
@@ -37,6 +38,8 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
             RepositoryDetailsView(repository: repository)
 //        case .starred:
 //        case .organizations:
+        case .commits(let owner, let repoName):
+            CommitsView(owner: owner, repoName: repoName)
         default:
             Text("Test Home Navigation")
         }

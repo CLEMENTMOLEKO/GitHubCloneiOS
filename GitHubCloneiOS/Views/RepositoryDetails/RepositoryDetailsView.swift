@@ -154,7 +154,12 @@ struct RepositoryDetailsView: View {
                     .frame(height: 37) //Hot fix.
                 }
                 
-                NavigationLink(destination: Text("Commits")) {
+                NavigationLink(
+                    value: HomeNavigationValues.commits(
+                        owner: repository.owner.login,
+                        repoName: repository.name
+                    )
+                ){
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
                             .fill(Color(uiColor: .systemFill))
