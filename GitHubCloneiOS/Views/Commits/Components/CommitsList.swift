@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CommitsList: View {
     let commits: [Commit]
+    let relativeDateFormatter = RelativeDateTimeFormatter()
     
     var body: some View {
         if commits.isEmpty {
@@ -20,7 +21,7 @@ struct CommitsList: View {
             List {
                 ForEach(commits) { commit in
                     commitCell(commit: commit)
-                        .badge("1h")
+                        .badge(Date.timeAgo(from: commit.commit.committer.date))
                 }
                 .listRowSpacing(0)
             }
@@ -31,6 +32,7 @@ struct CommitsList: View {
     private func commitCell(commit: Commit) -> some View {
         VStack(alignment: .leading) {
             Text(commit.commit.message)
+                .lineLimit(1)
                 .font(.title3)
                 .fontWeight(.semibold)
             HStack {
