@@ -79,7 +79,7 @@ struct RepositoryDetailsView: View {
             .listRowBackground(Color.clear)
             
             Section {
-                ForEach(getGitHubItemsInRange(..<3)){ item in
+                ForEach(Array(DevData.githubItems.prefix(upTo: 3))){ item in
                     //TODO: this should be a component it's used everywhere (profile view, explore view)
                     NavigationLink(value: item.value) {
                         HStack {
@@ -99,7 +99,7 @@ struct RepositoryDetailsView: View {
                     }
                 }
                 DisclosureGroup(isExpanded: $isExpanded) {
-                    ForEach(getGitHubItemsInRange(3...)){ item in
+                    ForEach(Array(DevData.githubItems.suffix(from: 3))){ item in
                         //TODO: this should be a component it's used everywhere (profile view, explore view)
                         NavigationLink(value: item.value) {
                             HStack {
@@ -259,18 +259,6 @@ struct RepositoryDetailsView: View {
             }
         }
     }
-}
-
-private func getGitHubItemsInRange<R: RangeExpression>(_ range: R) -> [MyWorkItem] where R.Bound == Int {
-    let fullRange = range.relative(to: 0..<DevData.githubItems.count)
-    let startIndex = fullRange.lowerBound
-    let endIndex = fullRange.upperBound
-
-    guard startIndex < endIndex else {
-        return []
-    }
-
-    return Array(DevData.githubItems[fullRange])
 }
 
 //TODO: Create sample data for previews
