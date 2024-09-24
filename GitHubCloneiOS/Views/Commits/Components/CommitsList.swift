@@ -9,13 +9,12 @@ import SwiftUI
 
 struct CommitsList: View {
     let commits: [Commit]
-    let relativeDateFormatter = RelativeDateTimeFormatter()
     
     var body: some View {
         if commits.isEmpty {
             ContentUnavailableView(
                 "No commits available",
-                image: "star.fill"
+                systemImage: "star.fill"
             )
         } else {
             List {
