@@ -80,78 +80,40 @@ struct RepositoryDetailsView: View {
             
             Section {
                 ForEach(Array(DevData.githubItems.prefix(upTo: 3))){ item in
-                    //TODO: this should be a component it's used everywhere (profile view, explore view)
                     NavigationLink(value: item.value) {
-                        HStack {
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(item.systemImageColor)
-                                .frame(width: 35, height: 35)
-                                .overlay{
-                                    Image(systemName: item.systemImage)
-                                        .font(.system(size: CGFloat(15)))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                }
-                                
-                            Text(item.name)
-                        }
-                        .frame(height: 37) //Hot fix.
+                        ListRowItem(
+                            iconBackground: item.systemImageColor,
+                            iconName: item.systemImage,
+                            name: item.name
+                        )
                     }
                 }
                 DisclosureGroup(isExpanded: $isExpanded) {
                     ForEach(Array(DevData.githubItems.suffix(from: 3))){ item in
-                        //TODO: this should be a component it's used everywhere (profile view, explore view)
                         NavigationLink(value: item.value) {
-                            HStack {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .fill(item.systemImageColor)
-                                    .frame(width: 35, height: 35)
-                                    .overlay{
-                                        Image(systemName: item.systemImage)
-                                            .font(.system(size: CGFloat(15)))
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.white)
-                                    }
-                                    
-                                Text(item.name)
-                            }
-                            .frame(height: 37) //Hot fix.
+                            ListRowItem(
+                                iconBackground: item.systemImageColor,
+                                iconName: item.systemImage,
+                                name: item.name
+                            )
                         }
                     }
                 } label: {
-                    HStack {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color(uiColor: .systemFill))
-                            .frame(width: 35, height: 35)
-                            .overlay{
-                                Image(systemName: "ellipsis")
-                                    .font(.system(size: CGFloat(15)))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                            }
-                            
-                        Text(isExpanded ? "Less" : "More")
-                    }
-                    .frame(height: 37) //Hot fix.
+                    ListRowItem(
+                        iconBackground: Color(uiColor: .systemFill),
+                        iconName: "ellipsis",
+                        name: isExpanded ? "Less" : "More"
+                    )
                 }
             }
             
             Section {
                 NavigationLink(destination: Text("Repos Code")) {
-                    HStack {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color(uiColor: .systemFill))
-                            .frame(width: 35, height: 35)
-                            .overlay{
-                                Image(systemName: "ellipsis.curlybraces")
-                                    .font(.system(size: CGFloat(15)))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                            }
-                            
-                        Text("Code")
-                    }
-                    .frame(height: 37) //Hot fix.
+                    ListRowItem(
+                        iconBackground: Color(uiColor: .systemFill),
+                        iconName: "ellipsis.curlybraces",
+                        name: "Code"
+                    )
                 }
                 
                 NavigationLink(
@@ -160,21 +122,12 @@ struct RepositoryDetailsView: View {
                         repoName: repository.name
                     )
                 ){
-                    HStack {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(Color(uiColor: .systemFill))
-                            .frame(width: 35, height: 35)
-                            .overlay{
-                                Image(systemName: "arrowshape.right.circle")
-                                    .font(.system(size: CGFloat(15)))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                            }
-                            
-                        Text("Commits")
-                    }
-                    .badge(10) //TODO: get commit counts, it's ridiculous that is not on the json object
-                    .frame(height: 37) //Hot fix.
+                    ListRowItem(
+                        iconBackground: Color(uiColor: .systemFill),
+                        iconName: "arrowshape.right.circle",
+                        name: "Commits"
+                    )
+                    .badge(10)
                 }
             } header: {
                 LabeledContent {
