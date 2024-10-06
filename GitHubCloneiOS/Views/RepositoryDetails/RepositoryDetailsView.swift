@@ -10,7 +10,6 @@ import SwiftUI
 struct RepositoryDetailsView: View {
     let repository: Repository
     
-    @StateObject var viewModel: RepositoryDetailsViewModel = .init()
     @State var isExpanded = false
     
     var body: some View {
@@ -144,7 +143,7 @@ struct RepositoryDetailsView: View {
             .headerProminence(.increased)
             
             Section {
-                Text("This is the read me for my perfect repo. I'm literally cloning chatGPT and Claude. Can't touch me.")
+                MarkDownView(markDownUrl: "https://api.github.com/repos/clementmoleko/\(repository.name)/contents/README.md")
             } header: {
                 LabeledContent {
                     Button("Edit") {
