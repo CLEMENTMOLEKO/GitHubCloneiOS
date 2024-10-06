@@ -39,20 +39,11 @@ private extension HomeView {
             ForEach(vm.gitHubItems){ item in
                 //TODO: this should be a component it's used everywhere (profile view, explore view)
                 NavigationLink(value: item.value) {
-                    HStack {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(item.systemImageColor)
-                            .frame(width: 35, height: 35)
-                            .overlay{
-                                Image(systemName: item.systemImage)
-                                    .font(.system(size: CGFloat(15)))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                            }
-                            
-                        Text(item.name)
-                    }
-                    .frame(height: 37) //Hot fix.
+                    ListRowItem(
+                        iconBackground: item.systemImageColor,
+                        iconName: item.systemImage,
+                        name: item.name
+                    )
                 }
             }
         } header: {
