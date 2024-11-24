@@ -22,6 +22,7 @@ struct APIService {
                 dateDecodingStrategy: dateDecodingStrategy
             )
         case .failure(let error):
+            print("Error getting JSON Data: \(error.localizedDescription)")
             return .failure(error)
         }
     }
@@ -31,6 +32,7 @@ struct APIService {
        
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
+            print("DATA: \(String(decoding: data, as: Unicode.UTF8.self)), RESPONSE: \(response)")
             guard !data.isEmpty else { return .failure(.noData)}
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200 else { return .failure(.invalidResponse)}

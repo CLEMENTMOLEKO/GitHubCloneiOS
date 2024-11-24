@@ -17,6 +17,7 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
     case starred
     case organizations
     case commits(owner: String, repoName: String)
+    case code(path: String? = nil, owner: String, repoName: String)
     
     var id: Self { self }
     
@@ -40,6 +41,8 @@ enum HomeNavigationValues: Hashable, View, Identifiable {
 //        case .organizations:
         case .commits(let owner, let repoName):
             CommitsView(owner: owner, repoName: repoName)
+        case .code(let path, let owner, let repoName):
+            CodeContentView(path: path, owner: owner, repoName: repoName)
         default:
             Text("Test Home Navigation")
         }

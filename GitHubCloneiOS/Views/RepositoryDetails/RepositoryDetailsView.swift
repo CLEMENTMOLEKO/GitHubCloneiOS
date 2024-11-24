@@ -107,7 +107,12 @@ struct RepositoryDetailsView: View {
             }
             
             Section {
-                NavigationLink(destination: Text("Repos Code")) {
+                NavigationLink(
+                    value: HomeNavigationValues.code(
+                        owner: repository.owner.login,
+                        repoName: repository.name
+                    )
+                ){
                     ListRowItem(
                         iconBackground: Color(uiColor: .systemFill),
                         iconName: "ellipsis.curlybraces",

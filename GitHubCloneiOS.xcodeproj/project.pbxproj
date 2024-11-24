@@ -19,7 +19,7 @@
 		2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */; };
 		2800E59F2C69547C00CD4E43 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E59E2C69547C00CD4E43 /* NavigationManager.swift */; };
 		281D17212CB1CA7400D77FC7 /* ListRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17202CB1CA7400D77FC7 /* ListRowItem.swift */; };
-		281D17242CB2DD0400D77FC7 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17232CB2DD0400D77FC7 /* CodeView.swift */; };
+		281D17242CB2DD0400D77FC7 /* CodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17232CB2DD0400D77FC7 /* CodeContentView.swift */; };
 		281D17272CB2DFAA00D77FC7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 281D17262CB2DFAA00D77FC7 /* MarkdownUI */; };
 		281D17292CB2E01B00D77FC7 /* MarkDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17282CB2E01B00D77FC7 /* MarkDownView.swift */; };
 		281D172B2CB2E2B600D77FC7 /* MarkDownViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D172A2CB2E2B600D77FC7 /* MarkDownViewModel.swift */; };
@@ -32,6 +32,8 @@
 		28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F42B4724A400C0DA24 /* ProfileView.swift */; };
 		28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F62B47321200C0DA24 /* ExploreView.swift */; };
 		28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F82B473EEE00C0DA24 /* ProfileViewModel.swift */; };
+		28B194702CF3A44700F43807 /* CodeContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1946F2CF3A44700F43807 /* CodeContentViewModel.swift */; };
+		28B194722CF3A59800F43807 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B194712CF3A59800F43807 /* CodeContent.swift */; };
 		28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */; };
 		28B63FD62B465B7900FF0EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */; };
 		28B63FE32B465C5100FF0EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FE22B465C5100FF0EDC /* Assets.xcassets */; };
@@ -70,7 +72,7 @@
 		2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsView.swift; sourceTree = "<group>"; };
 		2800E59E2C69547C00CD4E43 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		281D17202CB1CA7400D77FC7 /* ListRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItem.swift; sourceTree = "<group>"; };
-		281D17232CB2DD0400D77FC7 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		281D17232CB2DD0400D77FC7 /* CodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentView.swift; sourceTree = "<group>"; };
 		281D17282CB2E01B00D77FC7 /* MarkDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkDownView.swift; sourceTree = "<group>"; };
 		281D172A2CB2E2B600D77FC7 /* MarkDownViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkDownViewModel.swift; sourceTree = "<group>"; };
 		282153DC2C711E7300388B89 /* EditMyWorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyWorksView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		28A988F42B4724A400C0DA24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		28A988F62B47321200C0DA24 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		28A988F82B473EEE00C0DA24 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		28B1946F2CF3A44700F43807 /* CodeContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentViewModel.swift; sourceTree = "<group>"; };
+		28B194712CF3A59800F43807 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
 		28B63FCB2B465B7700FF0EDC /* GitHubCloneiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCloneiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCloneiOSApp.swift; sourceTree = "<group>"; };
 		28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				28F343F52B488A7E00FDB44B /* User.swift */,
 				28C834442B47FCA500255A7F /* Repository.swift */,
 				28D899452C9F2B7C000C5822 /* Commit.swift */,
+				28B194712CF3A59800F43807 /* CodeContent.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -220,7 +225,7 @@
 		281D17222CB2DCF000D77FC7 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				281D17232CB2DD0400D77FC7 /* CodeView.swift */,
+				281D17232CB2DD0400D77FC7 /* CodeContentView.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -242,6 +247,14 @@
 				286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */,
 			);
 			path = Commits;
+			sourceTree = "<group>";
+		};
+		28B1946E2CF3A43100F43807 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				28B1946F2CF3A44700F43807 /* CodeContentViewModel.swift */,
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 		28B63FC22B465B7700FF0EDC = {
@@ -342,6 +355,7 @@
 		28F198592B4668C100FE2064 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				28B1946E2CF3A43100F43807 /* Code */,
 				28D899422C9F2A9C000C5822 /* Commits */,
 				2800E5892C5FBAFE00CD4E43 /* Common */,
 				28F8676B2C5FB450009F3CCC /* Repositories */,
@@ -568,12 +582,14 @@
 				2800E5842C5FB99F00CD4E43 /* ProfileItem.swift in Sources */,
 				28E394EF2C709F3D005D79C3 /* DevData.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
+				28B194722CF3A59800F43807 /* CodeContent.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryCardView.swift in Sources */,
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				286ABAEA2C9F26CC00DB8BEB /* CommitsView.swift in Sources */,
+				28B194702CF3A44700F43807 /* CodeContentViewModel.swift in Sources */,
 				2800E57E2C5FB82F00CD4E43 /* MyWorkItem.swift in Sources */,
 				2800E5902C5FCF6900CD4E43 /* CacheManager.swift in Sources */,
 				2800E5932C60071300CD4E43 /* LoadingState.swift in Sources */,
@@ -599,7 +615,7 @@
 				2800E59F2C69547C00CD4E43 /* NavigationManager.swift in Sources */,
 				28C0CB872C42DE2900B31B78 /* EditMyWorksViewModel.swift in Sources */,
 				281D17292CB2E01B00D77FC7 /* MarkDownView.swift in Sources */,
-				281D17242CB2DD0400D77FC7 /* CodeView.swift in Sources */,
+				281D17242CB2DD0400D77FC7 /* CodeContentView.swift in Sources */,
 				28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */,
 				28C834452B47FCA500255A7F /* Repository.swift in Sources */,
 				28F198582B46688200FE2064 /* HomeView.swift in Sources */,
