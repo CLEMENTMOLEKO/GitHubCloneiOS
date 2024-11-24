@@ -73,11 +73,11 @@ extension CodeContentView {
                     Image(
                         systemName: codeContent.type.icon
                     )
-                    //TODO: can't used color
-                    .foregroundStyle(.blue.opacity(0.5))
+                    .foregroundStyle(codeContent.type.color)
                 }
             }
         }
+        .listStyle(.grouped)
     }
 }
 

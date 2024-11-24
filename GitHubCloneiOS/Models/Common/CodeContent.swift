@@ -6,17 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - CodeContent
 struct CodeContent: Codable, Identifiable {
     var id: String { sha }
     let name, path, sha: String
     let size: Int
-    let url, htmlURL: String
-    let gitURL: String
-    let downloadURL: String
+    let url: String
+    let gitURL, htmlURL,downloadURL: String?
     let type: ContentType
-    let links: Links
+    let links: Links?
 }
 
 // MARK: - Links
@@ -36,8 +36,15 @@ enum ContentType: String, Codable {
     
     var icon: String {
         switch self {
-        case .file: return "file"
-        case .dir: return "folder"
+        case .file: return "document"
+        case .dir: return "folder.fill"
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .file: return .secondary
+        case .dir: return .cyan
         }
     }
 }
