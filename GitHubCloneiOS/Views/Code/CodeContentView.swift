@@ -35,20 +35,25 @@ struct CodeContentView: View {
         .refreshable {
             await viewModel.getCode(for: repoName, owner: owner, path: path)
         }
-//        .toolbar {
-//            Menu {
-//                if let url = URL(string: "https://github.com/\(owner)/\(repoName)") {
-//                    ShareLink(
-//                        items: [url]) {
-//                            HStack {
-//                                Text("Share via..")
-//                                Spacer()
-//                                Image(systemName: "square.and.arrow.up")
-//                            }
-//                        }
-//                }
-//            }
-//        }
+        .toolbar {
+            ToolbarItem {
+                Menu {
+                    if let url = URL(string: "https://github.com/\(owner)/\(repoName)") {
+                        ShareLink(
+                            items: [url]) {
+                                HStack {
+                                    Text("Share via..")
+                                    Spacer()
+                                    Image(systemName: "square.and.arrow.up")
+                                }
+                            }
+                    }
+                } label: {
+                    Image(systemName: "ellipsis")
+                }
+            }
+            
+        }
         .task {
             await viewModel.getCode(for: repoName, owner: owner, path: path)
         }
@@ -67,7 +72,7 @@ extension CodeContentView {
             ) {
                 Label {
                     Text(
-                        codeContent.path
+                        codeContent.name
                     )
                 } icon: {
                     Image(
