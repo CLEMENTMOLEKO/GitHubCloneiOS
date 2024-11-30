@@ -19,7 +19,6 @@ struct GithubCloneApp: App {
                         for: HomeNavigationValues.self,
                         path: $navigationManager.homeRoutes
                     )
-                    .environmentObject(navigationManager)
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
@@ -38,29 +37,33 @@ struct GithubCloneApp: App {
                     }
 
                 ProfileView()
+                    .navigationStackWithDestination(
+                        for: ProfileNavigationValues.self,
+                        path: $navigationManager.profileRoutes
+                    )
                     .tabItem {
-                        //let url = URL(string: "https://picsum.photos/200")
                         Image(systemName: "person")
-                        //TODO: how to render below async image?
-//                        AsyncImage(url: url) { image in
-//                            image
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .clipShape(Circle())
-//                                .frame(width: 20, height: 20)
-//                        } placeholder: {
-//                            Circle()
-//                                .fill(.gray)
-//                                .overlay(
-//                                    Image(systemName: "person")
-//                                )
-//                        }
-//                        .frame(maxWidth: 20, maxHeight: 20)
-
                         Text("Profile")
+                        //TODO: how to render below async image?
+                        //let url = URL(string: "https://picsum.photos/200")
+                        //                        AsyncImage(url: url) { image in
+                        //                            image
+                        //                                .resizable()
+                        //                                .aspectRatio(contentMode: .fit)
+                        //                                .clipShape(Circle())
+                        //                                .frame(width: 20, height: 20)
+                        //                        } placeholder: {
+                        //                            Circle()
+                        //                                .fill(.gray)
+                        //                                .overlay(
+                        //                                    Image(systemName: "person")
+                        //                                )
+                        //                        }
+                        //                        .frame(maxWidth: 20, maxHeight: 20)
                     }
 
             }
+            .environmentObject(navigationManager)
         }
     }
 }

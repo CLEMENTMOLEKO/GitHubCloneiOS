@@ -20,7 +20,7 @@ enum ProfileNavigationValues: NavigationDestination {
         case .following:
             Text("Following View")
         case .followers:
-            Text("Followers View")
+            FollowersView()
         case .starred:
             Text("Starred View")
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
     @StateObject var vm: ProfileViewModel = .init()
     
     var body: some View {
@@ -63,10 +64,22 @@ private extension ProfileView {
             VStack(alignment: .leading, spacing: 30){
                 Text(vm.user?.bio ?? "")
                 HStack{
-                    Image(systemName: "person.2")
-                    Text("\(vm.user?.followers ?? 0) followers")
-                    Image(systemName: "person")
-                    Text("\(vm.user?.following ?? 0) following")
+                    Group {
+                        Image(systemName: "person.2")
+                        Text("\(vm.user?.followers ?? 0) followers")
+                    }
+                    .onTapGesture {
+                        navigationManager.navigate(to: ProfileNavigationValues.followers)
+                    }
+                    
+                    Group {
+                        Image(systemName: "person")
+                        Text("\(vm.user?.following ?? 0) following")
+                    }
+                    .onTapGesture {
+                        navigationManager.navigate(to: ProfileNavigationValues.following)
+                    }
+                    
                 }
             }
             .frame(maxWidth: .infinity)
