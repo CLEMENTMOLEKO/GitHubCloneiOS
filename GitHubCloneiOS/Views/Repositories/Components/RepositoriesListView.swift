@@ -50,7 +50,7 @@ struct RepositoriesListView: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     navigationManager.navigate(
-                        to: .repositoryDetail(
+                        to: HomeNavigationValues.repositoryDetail(
                             repository: repository
                         )
                     )

@@ -17,7 +17,7 @@ struct GithubCloneApp: App {
                 HomeView()
                     .navigationStackWithDestination(
                         for: HomeNavigationValues.self,
-                        path: $navigationManager.routes
+                        path: $navigationManager.homeRoutes
                     )
                     .environmentObject(navigationManager)
                     .tabItem {

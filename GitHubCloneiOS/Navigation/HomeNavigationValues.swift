@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum HomeNavigationValues: Hashable, View, Identifiable {
+enum HomeNavigationValues: NavigationDestination {
     case issues
     case pullRequests
     case discussions

@@ -28,6 +28,8 @@
 		2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621E2B55147E00BC17E5 /* FavoritesView.swift */; };
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
 		286ABAEA2C9F26CC00DB8BEB /* CommitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */; };
+		288161012CFB6C76005EE8B8 /* ProfileNavigationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288161002CFB6C76005EE8B8 /* ProfileNavigationValues.swift */; };
+		288161052CFB72BA005EE8B8 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288161042CFB72BA005EE8B8 /* NavigationDestination.swift */; };
 		28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F22B4719DB00C0DA24 /* NotificationsView.swift */; };
 		28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F42B4724A400C0DA24 /* ProfileView.swift */; };
 		28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F62B47321200C0DA24 /* ExploreView.swift */; };
@@ -80,6 +82,8 @@
 		2830621E2B55147E00BC17E5 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsView.swift; sourceTree = "<group>"; };
+		288161002CFB6C76005EE8B8 /* ProfileNavigationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationValues.swift; sourceTree = "<group>"; };
+		288161042CFB72BA005EE8B8 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		28A988F22B4719DB00C0DA24 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		28A988F42B4724A400C0DA24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		28A988F62B47321200C0DA24 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				28F1985D2B4668FC00FE2064 /* Item.swift */,
+				288161042CFB72BA005EE8B8 /* NavigationDestination.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			children = (
 				28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */,
 				28C0CB842C42DCE000B31B78 /* HomeNavigationSheetValues.swift */,
+				288161002CFB6C76005EE8B8 /* ProfileNavigationValues.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -582,11 +588,13 @@
 				2800E5842C5FB99F00CD4E43 /* ProfileItem.swift in Sources */,
 				28E394EF2C709F3D005D79C3 /* DevData.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
+				288161012CFB6C76005EE8B8 /* ProfileNavigationValues.swift in Sources */,
 				28B194722CF3A59800F43807 /* CodeContent.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryCardView.swift in Sources */,
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
+				288161052CFB72BA005EE8B8 /* NavigationDestination.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
 				286ABAEA2C9F26CC00DB8BEB /* CommitsView.swift in Sources */,
 				28B194702CF3A44700F43807 /* CodeContentViewModel.swift in Sources */,
