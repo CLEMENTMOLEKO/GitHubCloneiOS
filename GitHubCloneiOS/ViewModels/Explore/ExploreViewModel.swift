@@ -26,7 +26,7 @@ final class ExploreViewModel : ObservableObject {
         case .success(let apiRepositories):
             repositories = apiRepositories
             repositoriesState = .success
-        case .failure(let failure):
+        case .failure(_):
             repositoriesState = .failure
         }
     }

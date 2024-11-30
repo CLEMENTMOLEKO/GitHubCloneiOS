@@ -63,10 +63,11 @@ private extension ProfileView {
             VStack(alignment: .leading, spacing: 30){
                 Text(vm.user?.bio ?? "")
                 HStack{
+                    Image(systemName: "person.2")
+                    Text("\(vm.user?.followers ?? 0) followers")
                     Image(systemName: "person")
                     Text("\(vm.user?.following ?? 0) following")
                 }
-                .font(.headline)
             }
             .frame(maxWidth: .infinity)
         }
@@ -88,24 +89,16 @@ private extension ProfileView {
     
     private var popularSection: some View {
         Section {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    CachedAvatarView(
-                        imageKey: vm.user?.avatarUrl ?? "",
-                        imageUrl: vm.user?.avatarUrl ?? ""
-                    )
-                    .frame(width: 30)
-                    
-                    Text(vm.user?.login.uppercased() ?? "")
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(0..<10, id: \.self) { _ in
+                        popularRepository
+                            .frame(width: UIScreen.main.bounds.width * 0.80)
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                Text("repository name placeholder") //TODO: we need to get popular repos for the logged in user.
-                    .font(.headline)
-                Text("This is the placeholder for the popular repository shown on the profile")
+                
             }
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 5))
+            .scrollIndicators(.hidden)
         } header: {
             HStack {
                 Image(systemName: "star")
@@ -115,6 +108,28 @@ private extension ProfileView {
         }
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
+    }
+    
+    private var popularRepository: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                CachedAvatarView(
+                    imageKey: vm.user?.avatarUrl ?? "",
+                    imageUrl: vm.user?.avatarUrl ?? ""
+                )
+                .frame(width: 30)
+                
+                Text(vm.user?.login.uppercased() ?? "")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Text("repository name placeholder") //TODO: we need to get popular repos for the logged in user.
+                .font(.headline)
+            Text("This is the placeholder for the popular repository shown on the profile")
+                .lineLimit(2)
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 5))
     }
 }
 
