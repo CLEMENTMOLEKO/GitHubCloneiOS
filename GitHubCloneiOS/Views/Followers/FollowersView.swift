@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FollowersView: View {
-    let viewModel: FollowersViewModel = .init()
     let followersEndpoint: String = "https://api.github.com/users/CLEMENTMOLEKO/followers"
     
     var body: some View {

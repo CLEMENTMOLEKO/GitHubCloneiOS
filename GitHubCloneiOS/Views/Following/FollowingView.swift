@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct FollowingView: View {
-    let viewModel: FollowingViewModel = .init()
     let followingEndpoint: String = "https://api.github.com/users/CLEMENTMOLEKO/following"
     
     var body: some View {
         UserListView(userEndpoint: followingEndpoint) {
-            ContentUnavailableView("No following anyone yet", image: "person.2")
+            ContentUnavailableView("Not following anyone yet", image: "person.2")
         }
     }
 }
