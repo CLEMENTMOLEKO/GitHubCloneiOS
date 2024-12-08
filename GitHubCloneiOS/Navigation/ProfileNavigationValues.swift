@@ -18,7 +18,7 @@ enum ProfileNavigationValues: NavigationDestination {
     var body: some View {
         switch self {
         case .following:
-            Text("Following View")
+            FollowingView()
         case .followers:
             FollowersView()
         case .starred:
