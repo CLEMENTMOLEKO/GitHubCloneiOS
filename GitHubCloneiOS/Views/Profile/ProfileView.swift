@@ -56,34 +56,45 @@ private extension ProfileView {
         Section {
             HStack {
                 CachedAvatarView(imageKey: vm.user?.avatarUrl ?? "", imageUrl: vm.user?.avatarUrl ?? "")
-                    .frame(width: 80)
+                    .frame(width: 50)
                 Text(vm.user?.login.uppercased() ?? "")
                 Spacer()
             }
             
-            VStack(alignment: .leading, spacing: 30){
-                Text(vm.user?.bio ?? "")
-                HStack{
-                    Group {
-                        Image(systemName: "person.2")
-                        Text("\(vm.user?.followers ?? 0) followers")
-                    }
-                    .onTapGesture {
-                        navigationManager.navigate(to: ProfileNavigationValues.followers)
-                    }
-                    
-                    Group {
-                        Image(systemName: "person")
-                        Text("\(vm.user?.following ?? 0) following")
-                    }
-                    .onTapGesture {
-                        navigationManager.navigate(to: ProfileNavigationValues.following)
-                    }
-                    
-                }
+            HStack {
+                Image(systemName: "face.smiling.inverse")
+                Text("Set your status")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Image(systemName: "pencil")
             }
-            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color(uiColor: .secondarySystemFill))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            
+            Text(vm.user?.bio ?? "")
+            
+            HStack {
+                Group {
+                    Image(systemName: "person.2")
+                    Text("\(vm.user?.followers ?? 0) followers")
+                }
+                .onTapGesture {
+                    navigationManager.navigate(to: ProfileNavigationValues.followers)
+                }
+                
+                Group {
+                    Image(systemName: "person")
+                    Text("\(vm.user?.following ?? 0) following")
+                }
+                .onTapGesture {
+                    navigationManager.navigate(to: ProfileNavigationValues.following)
+                }
+                
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
     }
     
     private var itemsSection: some View {
