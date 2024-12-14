@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @EnvironmentObject var navigationManager: NavigationManager
+    @State var currentProfileSheet: ProfileNavigationSheeValues? = nil
     @StateObject var vm: ProfileViewModel = .init()
     
     var body: some View {
@@ -46,6 +47,7 @@ struct ProfileView: View {
             .task {
                 await vm.getUser()
             }
+            .sheet(item: $currentProfileSheet) {$0}
         }
     }
 }
@@ -69,7 +71,10 @@ private extension ProfileView {
             }
             .padding()
             .background(Color(uiColor: .secondarySystemFill))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .onTapGesture {
+                currentProfileSheet = .status
+            }
             
             Text(vm.user?.bio ?? "")
             
