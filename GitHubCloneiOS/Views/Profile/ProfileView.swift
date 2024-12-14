@@ -57,8 +57,11 @@ private extension ProfileView {
     private var detailSection: some View {
         Section {
             HStack {
-                CachedAvatarView(imageKey: vm.user?.avatarUrl ?? "", imageUrl: vm.user?.avatarUrl ?? "")
-                    .frame(width: 50)
+                CachedAvatarView(
+                    imageKey: vm.user?.avatarUrl ?? "",
+                    imageUrl: vm.user?.avatarUrl ?? ""
+                )
+                .frame(width: 50)
                 Text(vm.user?.login.uppercased() ?? "")
                 Spacer()
             }
@@ -72,9 +75,11 @@ private extension ProfileView {
             .padding()
             .background(Color(uiColor: .secondarySystemFill))
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .onTapGesture {
+            .pressable {
                 currentProfileSheet = .status
             }
+            
+            
             
             Text(vm.user?.bio ?? "")
             
