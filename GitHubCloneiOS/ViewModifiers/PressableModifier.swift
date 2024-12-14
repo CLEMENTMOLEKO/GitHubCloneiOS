@@ -20,11 +20,10 @@ struct PressableButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .scaleEffect(isPressed ? scaleFactor : 1.0)
-            .animation(.easeInOut(duration: 0.15), value: isPressed)
             .gesture(
                 LongPressGesture(minimumDuration: 0)
                     .onEnded { _ in
-                        withAnimation(.easeInOut(duration: 0.15)) {
+                        withAnimation(.easeInOut(duration: 0.25)) {
                             isPressed = true
                         } completion: {
                             isPressed = false
