@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct GithubCloneApp: App {
     @StateObject var navigationManager = NavigationManager()
+    @AppStorage("tab_selection") var tabSelection: TabSelection = .home
     
     var body: some Scene {
         WindowGroup {
-            TabView {
+            TabView(selection: $tabSelection) {
                 HomeView()
                     .navigationStackWithDestination(
                         for: HomeNavigationValues.self,
@@ -23,18 +24,21 @@ struct GithubCloneApp: App {
                         Image(systemName: "house")
                         Text("Home")
                     }
+                    .tag(TabSelection.home)
                 
                 NotificationsView()
                     .tabItem {
                         Image(systemName: "bell")
                         Text("Notifications")
                     }
+                    .tag(TabSelection.notifications)
 
                 ExploreView()
                     .tabItem {
                         Image(systemName: "flashlight.on.fill")
                         Text("Explore")
                     }
+                    .tag(TabSelection.explore)
 
                 ProfileView()
                     .navigationStackWithDestination(
@@ -61,9 +65,17 @@ struct GithubCloneApp: App {
                         //                        }
                         //                        .frame(maxWidth: 20, maxHeight: 20)
                     }
+                    .tag(TabSelection.profile)
 
             }
             .environmentObject(navigationManager)
         }
+    }
+    
+    enum TabSelection : String, Codable {
+        case home
+        case notifications
+        case explore
+        case profile
     }
 }
