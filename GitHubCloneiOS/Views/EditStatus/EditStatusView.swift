@@ -32,8 +32,7 @@ struct EditStatusView: View {
                             }
                     }
                 } footer: {
-                    //TODO: calucate chars left from editor.
-                    Text("\(80 - viewModel.statusMessage.count) characters remaining")
+                    Text("\(statusMessageTextLimit - viewModel.statusMessage.count) characters remaining")
                 }
                 
                 Section {
