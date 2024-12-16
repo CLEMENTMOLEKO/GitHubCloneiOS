@@ -11,6 +11,8 @@ struct EditStatusView: View {
     @Environment(\.dismiss) private var dismiss
     @State var viewModel: EditStatusViewModel = .init()
     
+    let statusMessageTextLimit = 80
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -19,13 +21,19 @@ struct EditStatusView: View {
                         Image(systemName: "smiley.fill")
                             .padding(4)
                             .background(Color.secondary.opacity(0.5))
-                            .border(Color.secondary, width: 1)
                             .clipShape(RoundedRectangle(cornerRadius: 4))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 4)
+                                    .strokeBorder(lineWidth: 1)
+                            )
                         TextEditor(text: $viewModel.statusMessage)
+                            .onChange(of: viewModel.statusMessage) { _, newValue in
+                                viewModel.statusMessage = String(newValue.prefix(statusMessageTextLimit))
+                            }
                     }
                 } footer: {
                     //TODO: calucate chars left from editor.
-                    Text("80 characters remaining")
+                    Text("\(80 - viewModel.statusMessage.count) characters remaining")
                 }
                 
                 Section {
