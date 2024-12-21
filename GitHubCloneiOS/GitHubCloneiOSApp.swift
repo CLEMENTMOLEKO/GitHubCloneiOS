@@ -11,6 +11,12 @@ import SwiftUI
 struct GithubCloneApp: App {
     @StateObject var navigationManager = NavigationManager()
     @AppStorage("tab_selection") var tabSelection: TabSelection = .home
+    @AppStorage("current_user_login") var currentUserLogin: String?
+    
+    init() {
+        //TODO: get this from user onboarding/login.
+        UserDefaults.standard.set("clementmoleko", forKey: "current_user_login")
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -40,7 +46,7 @@ struct GithubCloneApp: App {
                     }
                     .tag(TabSelection.explore)
 
-                ProfileView()
+                ProfileView(userLogin: currentUserLogin!)
                     .navigationStackWithDestination(
                         for: ProfileNavigationValues.self,
                         path: $navigationManager.profileRoutes

@@ -17,13 +17,18 @@ final class ProfileViewModel: ObservableObject {
     
     @Published var user: User? = nil
     @Published var userState: LoadingState = .loading
+    let userLogin: String
+    
+    init(userLogin: String) {
+        self.userLogin = userLogin
+    }
     
     func getUser() async {
         let apiService = APIService()
 
         let userResult: Result<User, APIError> = await apiService.getJSONData(
             //TODO: user url should come from logged in user, for now we can use user defaults.
-            from: "https://api.github.com/users/clementmoleko",
+            from: "https://api.github.com/users/\(userLogin)",
             keyDecodingStrategy: .convertFromSnakeCase,
             dateDecodingStrategy: .iso8601
         )

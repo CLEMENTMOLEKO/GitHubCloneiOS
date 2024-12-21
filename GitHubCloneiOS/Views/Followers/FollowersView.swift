@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct FollowersView: View {
-    let followersEndpoint: String = "https://api.github.com/users/CLEMENTMOLEKO/followers"
+    @EnvironmentObject var navigationManager: NavigationManager
+    @AppStorage("current_user_login") var currentUserLogin: String?
+    
+    var followersEndpoint: String {
+        guard let userLogin = currentUserLogin else {
+            return ""
+        }
+        
+        return "https://api.github.com/users/\(userLogin)/followers"
+    }
     
     var body: some View {
-        UserListView(userEndpoint: followersEndpoint) {
-            ContentUnavailableView("No followers yet", image: "person.2")
+        UserListView(userEndpoint: followersEndpoint) { user in
+            navigationManager.navigate(
+                to: ProfileNavigationValues.profile(
+                    userLogin: user.login
+                )
+            )
+        } contentUnavailableView: {
+            ContentUnavailableView(
+                "No followers yet",
+                image: "person.2"
+            )
         }
     }
 }

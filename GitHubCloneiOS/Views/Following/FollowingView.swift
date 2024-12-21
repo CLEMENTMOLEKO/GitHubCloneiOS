@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct FollowingView: View {
-    let followingEndpoint: String = "https://api.github.com/users/CLEMENTMOLEKO/following"
-    
+    @AppStorage("current_user_login") var currentUserLogin: String?
+    @EnvironmentObject var navigationManager: NavigationManager
+
+    //TODO: Remove computed property and pass following endpoint or userlogin.
+    var followingEndpoint: String {
+        guard let userLogin = currentUserLogin else {
+            return "" // Handle a default or empty case appropriately
+        }
+        return "https://api.github.com/users/\(userLogin)/following"
+    }
+
     var body: some View {
-        UserListView(userEndpoint: followingEndpoint) {
-            ContentUnavailableView("Not following anyone yet", image: "person.2")
+        UserListView(userEndpoint: followingEndpoint) { user in
+            navigationManager.navigate(
+                to: ProfileNavigationValues.profile(
+                    userLogin: user.login
+                )
+            )
+        } contentUnavailableView: {
+            ContentUnavailableView(
+                "Not following anyone yet",
+                image: "person.2"
+            )
         }
     }
 }

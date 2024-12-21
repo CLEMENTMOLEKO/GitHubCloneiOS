@@ -14,6 +14,7 @@ enum ProfileNavigationValues: NavigationDestination {
     case following
     case followers
     case starred
+    case profile(userLogin: String)
     
     var body: some View {
         switch self {
@@ -23,6 +24,8 @@ enum ProfileNavigationValues: NavigationDestination {
             FollowersView()
         case .starred:
             Text("Starred View")
+        case .profile(let userLogin):
+            ProfileView(userLogin: userLogin)
         }
     }
 }

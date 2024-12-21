@@ -10,45 +10,46 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @State var currentProfileSheet: ProfileNavigationSheeValues? = nil
-    @StateObject var vm: ProfileViewModel = .init()
+    @StateObject var vm: ProfileViewModel
+   
+    init(userLogin: String) {
+        _vm = StateObject(wrappedValue: ProfileViewModel(userLogin: userLogin))
+    }
     
     var body: some View {
-        NavigationStack {
-            List {
-                switch vm.userState {
-                case .loading:
-                    ProgressView()
-                case .success:
-                    Group {
-                        detailSection
-                        itemsSection
-                        popularSection
-                    }
-                case .failure:
-                    Text("Error Occured")
+        List {
+            switch vm.userState {
+            case .loading:
+                ProgressView()
+            case .success:
+                Group {
+                    detailSection
+                    itemsSection
+                    popularSection
                 }
+            case .failure:
+                Text("Error Occured Getting Profile.")
             }
-            .listStyle(.grouped)
-            .toolbar{
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button{
-                        
-                    } label: {
-                        Image(systemName: "gearshape")
-                    }
-                    //TODO: url below should be from user defaults or swiftdata/core data for the user who logged in currently.
-                    if let htmlUrl = URL(string: vm.user?.htmlUrl ?? "") {
-                        ShareLink(item: htmlUrl) {
-                            Image(systemName: "square.and.arrow.up")
-                        }
-                    }
-                }
-            }
-            .task {
-                await vm.getUser()
-            }
-            .sheet(item: $currentProfileSheet) {$0}
         }
+        .listStyle(.grouped)
+        .toolbar{
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button{
+                    
+                } label: {
+                    Image(systemName: "gearshape")
+                }
+                if let htmlUrl = URL(string: vm.user?.htmlUrl ?? "") {
+                    ShareLink(item: htmlUrl) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                }
+            }
+        }
+        .task {
+            await vm.getUser()
+        }
+        .sheet(item: $currentProfileSheet) {$0}
     }
 }
 
@@ -78,8 +79,6 @@ private extension ProfileView {
             .pressable {
                 currentProfileSheet = .status
             }
-            
-            
             
             Text(vm.user?.bio ?? "")
             
@@ -130,7 +129,6 @@ private extension ProfileView {
                             .frame(width: UIScreen.main.bounds.width * 0.80)
                     }
                 }
-                
             }
             .scrollIndicators(.hidden)
         } header: {
@@ -168,5 +166,5 @@ private extension ProfileView {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(userLogin: "CLEMENTMOLEKO")
 }

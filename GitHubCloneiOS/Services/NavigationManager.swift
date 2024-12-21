@@ -20,7 +20,7 @@ class NavigationManager: ObservableObject {
         case let profileDestination as ProfileNavigationValues:
             profileNavigateTo(profileDestination)
         default:
-            print("Unsupported navigation type")
+            fatalError("Unsupported navigation type")
         }
     }
     

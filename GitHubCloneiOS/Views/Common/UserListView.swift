@@ -11,11 +11,17 @@ struct UserListView<Content: View>: View {
     let userEndpoint: String
     let contentUnavailableView: Content
     let viewModel: UserListViewModel
+    let onUserSelected: ((User) -> Void)?
     
-    init (userEndpoint: String, @ViewBuilder content: () -> Content) {
-        self.contentUnavailableView = content()
+    init(
+        userEndpoint: String,
+        onUserSelected: ((User) -> Void)? = nil,
+        @ViewBuilder contentUnavailableView: () -> Content
+    ) {
+        self.contentUnavailableView = contentUnavailableView()
         self.userEndpoint = userEndpoint
-        viewModel = UserListViewModel(userEndpoint: userEndpoint)
+        self.onUserSelected = onUserSelected
+        self.viewModel = UserListViewModel(userEndpoint: userEndpoint)
     }
     
     var body: some View {
@@ -36,7 +42,6 @@ struct UserListView<Content: View>: View {
         .task {
             await viewModel.getFollowers()
         }
-        
     }
     
     private var users: some View {
@@ -48,12 +53,10 @@ struct UserListView<Content: View>: View {
                )
                .frame(width: 40)
                VStack(alignment: .leading) {
-                   //TODO: followers don't return follwer information, check if we can request more based on id.
                    if let name = user.name {
                        Text(name)
                            .font(.headline)
                    }
-                   
                    Text(user.login)
                        .font(.headline)
                    if let bio = user.bio {
@@ -61,6 +64,9 @@ struct UserListView<Content: View>: View {
                    }
                }
             }
+           .onTapGesture {
+               onUserSelected?(user)
+           }
         }
         .listStyle(.plain)
     }
