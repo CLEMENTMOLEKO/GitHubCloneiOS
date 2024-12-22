@@ -10,13 +10,15 @@ import SwiftUI
 struct FollowingView: View {
     @AppStorage("current_user_login") var currentUserLogin: String?
     @EnvironmentObject var navigationManager: NavigationManager
+    let userLogin: String?
+    
+    init(userLogin: String? = nil) {
+        self.userLogin = userLogin
+    }
 
     //TODO: Remove computed property and pass following endpoint or userlogin.
     var followingEndpoint: String {
-        guard let userLogin = currentUserLogin else {
-            return "" // Handle a default or empty case appropriately
-        }
-        return "https://api.github.com/users/\(userLogin)/following"
+        return "https://api.github.com/users/\(userLogin ?? currentUserLogin!)/following"
     }
 
     var body: some View {
@@ -29,7 +31,7 @@ struct FollowingView: View {
         } contentUnavailableView: {
             ContentUnavailableView(
                 "Not following anyone yet",
-                image: "person.2"
+                systemImage: "person.fill.xmark"
             )
         }
     }

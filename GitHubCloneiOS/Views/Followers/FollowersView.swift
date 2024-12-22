@@ -10,13 +10,14 @@ import SwiftUI
 struct FollowersView: View {
     @EnvironmentObject var navigationManager: NavigationManager
     @AppStorage("current_user_login") var currentUserLogin: String?
+    let userLogin: String?
+    
+    init (userLogin: String? = nil) {
+        self.userLogin = userLogin
+    }
     
     var followersEndpoint: String {
-        guard let userLogin = currentUserLogin else {
-            return ""
-        }
-        
-        return "https://api.github.com/users/\(userLogin)/followers"
+        return "https://api.github.com/users/\(userLogin ?? currentUserLogin!)/followers"
     }
     
     var body: some View {
@@ -29,7 +30,7 @@ struct FollowersView: View {
         } contentUnavailableView: {
             ContentUnavailableView(
                 "No followers yet",
-                image: "person.2"
+                systemImage: "person.fill.xmark"
             )
         }
     }

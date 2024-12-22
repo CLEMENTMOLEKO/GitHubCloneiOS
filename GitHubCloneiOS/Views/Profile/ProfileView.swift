@@ -88,7 +88,11 @@ private extension ProfileView {
                     Text("\(vm.user?.followers ?? 0) followers")
                 }
                 .onTapGesture {
-                    navigationManager.navigate(to: ProfileNavigationValues.followers)
+                    navigationManager.navigate(
+                        to: ProfileNavigationValues.followers(
+                            userLogin: vm.user?.login
+                        )
+                    )
                 }
                 
                 Group {
@@ -96,7 +100,7 @@ private extension ProfileView {
                     Text("\(vm.user?.following ?? 0) following")
                 }
                 .onTapGesture {
-                    navigationManager.navigate(to: ProfileNavigationValues.following)
+                    navigationManager.navigate(to: ProfileNavigationValues.following(userLogin: vm.user?.login))
                 }
                 
             }
