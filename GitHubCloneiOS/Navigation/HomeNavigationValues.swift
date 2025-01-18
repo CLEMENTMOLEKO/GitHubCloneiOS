@@ -38,7 +38,8 @@ enum HomeNavigationValues: NavigationDestination {
             RepositoriesView()
         case .repositoryDetail(let repository):
             RepositoryDetailsView(repository: repository)
-//        case .starred:
+        case .starred:
+            StarredRepositoriesView()
 //        case .organizations:
         case .commits(let owner, let repoName):
             CommitsView(owner: owner, repoName: repoName)
