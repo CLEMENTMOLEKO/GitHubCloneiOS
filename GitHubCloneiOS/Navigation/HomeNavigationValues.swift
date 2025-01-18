@@ -29,7 +29,8 @@ enum HomeNavigationValues: NavigationDestination {
     
     var body: some View {
         switch self {
-//        case .issues:
+        case .issues:
+            IssuesView()
 //        case .pullRequests:
 //        case .discussions:
 //        case .projects:

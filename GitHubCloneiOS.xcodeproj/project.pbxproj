@@ -18,6 +18,7 @@
 		2800E5962C694C9700CD4E43 /* RepositoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5952C694C9700CD4E43 /* RepositoriesListView.swift */; };
 		2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */; };
 		2800E59F2C69547C00CD4E43 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800E59E2C69547C00CD4E43 /* NavigationManager.swift */; };
+		2814A57E2D3BCAC300C69BDC /* IssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814A57D2D3BCAC300C69BDC /* IssuesView.swift */; };
 		281D17212CB1CA7400D77FC7 /* ListRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17202CB1CA7400D77FC7 /* ListRowItem.swift */; };
 		281D17242CB2DD0400D77FC7 /* CodeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281D17232CB2DD0400D77FC7 /* CodeContentView.swift */; };
 		281D17272CB2DFAA00D77FC7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 281D17262CB2DFAA00D77FC7 /* MarkdownUI */; };
@@ -81,6 +82,7 @@
 		2800E5952C694C9700CD4E43 /* RepositoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListView.swift; sourceTree = "<group>"; };
 		2800E5992C694DE900CD4E43 /* RepositoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsView.swift; sourceTree = "<group>"; };
 		2800E59E2C69547C00CD4E43 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		2814A57D2D3BCAC300C69BDC /* IssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesView.swift; sourceTree = "<group>"; };
 		281D17202CB1CA7400D77FC7 /* ListRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItem.swift; sourceTree = "<group>"; };
 		281D17232CB2DD0400D77FC7 /* CodeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentView.swift; sourceTree = "<group>"; };
 		281D17282CB2E01B00D77FC7 /* MarkDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkDownView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 			path = RepositoryDetails;
 			sourceTree = "<group>";
 		};
+		2814A57C2D3BCAB200C69BDC /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				2814A57D2D3BCAC300C69BDC /* IssuesView.swift */,
+			);
+			path = Issues;
+			sourceTree = "<group>";
+		};
 		281D17222CB2DCF000D77FC7 /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +410,7 @@
 		28F198562B46686900FE2064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2814A57C2D3BCAB200C69BDC /* Issues */,
 				286F9B9D2D0DC1B50061B876 /* EditStatus */,
 				2881610C2D05D1DC005EE8B8 /* Following */,
 				288161062CFB75D8005EE8B8 /* Followers */,
@@ -659,6 +670,7 @@
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
+				2814A57E2D3BCAC300C69BDC /* IssuesView.swift in Sources */,
 				288DDE812D0DE73B0034EB90 /* PressableModifier.swift in Sources */,
 				288161052CFB72BA005EE8B8 /* NavigationDestination.swift in Sources */,
 				28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */,
