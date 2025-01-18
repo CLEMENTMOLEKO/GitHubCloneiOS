@@ -15,7 +15,7 @@ struct StarredRepositoriesView: View {
             mylist
             starredRepositories
         }
-        .listStyle(.inset)
+        .listStyle(.grouped)
         .navigationTitle("Starred Repositories")
         .searchable(text: .constant(""))
         .task {
@@ -34,7 +34,7 @@ struct StarredRepositoriesView: View {
                     Image(systemName: "list.bullet")
                     Text("My List")
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 Button(action: {}) {
                     Text("Create List")
                 }
