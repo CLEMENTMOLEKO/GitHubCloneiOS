@@ -18,31 +18,29 @@ struct Repository: Codable, Identifiable, Hashable {
     }
     
     let id: Int
-    let name, fullName: String
+    let name: String
+    let fullName: String?
     let owner: Owner
     let welcomePrivate: Bool
-    let htmlURL: String
     let nodeID, description: String?
     let fork: Bool
     let url: String
-    let archiveURL, assigneesURL, blobsURL, branchesURL: String
-    let collaboratorsURL, commentsURL, commitsURL, compareURL: String
-    let contentsURL: String
-    let contributorsURL, deploymentsURL, downloadsURL, eventsURL: String
-    let forksURL: String
-    let gitCommitsURL, gitRefsURL, gitTagsURL/*, gitURL*/: String
-    let gitURL: String?
-    let issueCommentURL, issueEventsURL, issuesURL, keysURL: String
-    let labelsURL: String
-    let languagesURL, mergesURL: String
-    let milestonesURL, notificationsURL, pullsURL, releasesURL: String
+    let htmlURL, archiveURL, assigneesURL,
+        blobsURL, branchesURL,
+        collaboratorsURL, commentsURL, commitsURL, compareURL,
+        contentsURL, contributorsURL, deploymentsURL, downloadsURL, eventsURL,
+        forksURL, gitCommitsURL, gitRefsURL, gitTagsURL, gitURL: String?
+    let issueCommentURL, issueEventsURL, issuesURL, keysURL: String?
+    let labelsURL: String?
+    let languagesURL, mergesURL: String?
+    let milestonesURL, notificationsURL, pullsURL, releasesURL: String?
     let sshURL: String?
-    let stargazersURL: String
-    let statusesURL: String
-    let subscribersURL, subscriptionURL, tagsURL, teamsURL: String
-    let treesURL: String
+    let stargazersURL: String?
+    let statusesURL: String?
+    let subscribersURL, subscriptionURL, tagsURL, teamsURL: String?
+    let treesURL: String?
     let cloneURL, mirrorURL, svnURL, homepage: String?
-    let hooksURL: String
+    let hooksURL: String?
     let language: String?
     let forksCount, stargazersCount, watchersCount, size: Int?
     let defaultBranch: String?
@@ -135,7 +133,7 @@ struct Repository: Codable, Identifiable, Hashable {
 struct Owner: Codable {
     let login: String
     let id: Int
-    let nodeID: String
+    let nodeID: String?
     let avatarURL: String?
     let gravatarID: String?
     let url, htmlURL, followersURL: String?
