@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StarredRepositoriesView: View {
-    let viewModel: StarredRepositoriesViewModel = .init()
+    @State var viewModel: StarredRepositoriesViewModel = .init()
     
     var body: some View {
         List {
