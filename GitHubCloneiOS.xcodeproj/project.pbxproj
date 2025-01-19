@@ -30,6 +30,7 @@
 		2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */; };
 		2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830621E2B55147E00BC17E5 /* FavoritesView.swift */; };
 		283F6D052D3C3F2500681D11 /* StarredRepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F6D042D3C3F2500681D11 /* StarredRepositoriesViewModel.swift */; };
+		283F6D072D3D85D100681D11 /* RepositoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F6D062D3D85D100681D11 /* RepositoryCardView.swift */; };
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
 		286ABAEA2C9F26CC00DB8BEB /* CommitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */; };
 		286F9B9F2D0DC1D30061B876 /* EditStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F9B9E2D0DC1D30061B876 /* EditStatusView.swift */; };
@@ -66,7 +67,7 @@
 		28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F1985A2B4668D500FE2064 /* HomeViewModel.swift */; };
 		28F1985E2B4668FC00FE2064 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F1985D2B4668FC00FE2064 /* Item.swift */; };
 		28F343F62B488A7E00FDB44B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343F52B488A7E00FDB44B /* User.swift */; };
-		28F343F92B4939A700FDB44B /* RepositoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343F82B4939A700FDB44B /* RepositoryCardView.swift */; };
+		28F343F92B4939A700FDB44B /* RepositoryActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343F82B4939A700FDB44B /* RepositoryActionCardView.swift */; };
 		28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343FA2B49498C00FDB44B /* TrendingRepositoriesView.swift */; };
 		28F343FF2B4DE3D000FDB44B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F343FE2B4DE3D000FDB44B /* SettingsView.swift */; };
 		28F867592C5FAE83009F3CCC /* RepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F867582C5FAE83009F3CCC /* RepositoriesView.swift */; };
@@ -95,6 +96,7 @@
 		2830621C2B5512CD00BC17E5 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		2830621E2B55147E00BC17E5 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		283F6D042D3C3F2500681D11 /* StarredRepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRepositoriesViewModel.swift; sourceTree = "<group>"; };
+		283F6D062D3D85D100681D11 /* RepositoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCardView.swift; sourceTree = "<group>"; };
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsView.swift; sourceTree = "<group>"; };
 		286F9B9E2D0DC1D30061B876 /* EditStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatusView.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		28F1985A2B4668D500FE2064 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		28F1985D2B4668FC00FE2064 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		28F343F52B488A7E00FDB44B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		28F343F82B4939A700FDB44B /* RepositoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCardView.swift; sourceTree = "<group>"; };
+		28F343F82B4939A700FDB44B /* RepositoryActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryActionCardView.swift; sourceTree = "<group>"; };
 		28F343FA2B49498C00FDB44B /* TrendingRepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesView.swift; sourceTree = "<group>"; };
 		28F343FE2B4DE3D000FDB44B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		28F867582C5FAE83009F3CCC /* RepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesView.swift; sourceTree = "<group>"; };
@@ -155,11 +157,12 @@
 		2800E57B2C5FB54700CD4E43 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				28F343F82B4939A700FDB44B /* RepositoryCardView.swift */,
+				28F343F82B4939A700FDB44B /* RepositoryActionCardView.swift */,
 				2800E5872C5FBAEB00CD4E43 /* CachedAvatarView.swift */,
 				281D17202CB1CA7400D77FC7 /* ListRowItem.swift */,
 				281D17282CB2E01B00D77FC7 /* MarkDownView.swift */,
 				288161122D05D3D2005EE8B8 /* UserListView.swift */,
+				283F6D062D3D85D100681D11 /* RepositoryCardView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -692,7 +695,7 @@
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
 				288161012CFB6C76005EE8B8 /* ProfileNavigationValues.swift in Sources */,
 				28B194722CF3A59800F43807 /* CodeContent.swift in Sources */,
-				28F343F92B4939A700FDB44B /* RepositoryCardView.swift in Sources */,
+				28F343F92B4939A700FDB44B /* RepositoryActionCardView.swift in Sources */,
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
@@ -716,6 +719,7 @@
 				28F867592C5FAE83009F3CCC /* RepositoriesView.swift in Sources */,
 				2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */,
 				2830621F2B55147E00BC17E5 /* FavoritesView.swift in Sources */,
+				283F6D072D3D85D100681D11 /* RepositoryCardView.swift in Sources */,
 				288161152D05D4CB005EE8B8 /* UserListViewModel.swift in Sources */,
 				28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */,
 				2800E5812C5FB94500CD4E43 /* ExploreItem.swift in Sources */,

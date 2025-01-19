@@ -98,7 +98,7 @@ private extension ExploreView {
         case .success:
             ForEach(vm.repositories) { repository in
                 //maybe pass the id and make the request on the specific component for lazy loading?
-                RepositoryCardView(repository: repository)
+                RepositoryActionCardView(repository: repository)
             }
         case .failure:
             VStack {
