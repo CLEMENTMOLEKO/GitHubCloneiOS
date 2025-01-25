@@ -113,7 +113,7 @@ private extension ProfileView {
     private var itemsSection: some View {
         Section {
             ForEach(vm.gitHubItems){ item in
-                NavigationLink(value: item) {
+                NavigationLink(value: item.navigationItem) {
                     ListRowItem(
                         iconBackground: item.systemImageColor,
                         iconName: item.systemImage,

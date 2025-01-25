@@ -29,7 +29,7 @@ final class FavoritesViewModel: ObservableObject {
                 userRepositories = repos
                 requestState = .success
             }
-        case .failure(let failure):
+        case .failure(let _):
             requestState = .failure
         }
     }

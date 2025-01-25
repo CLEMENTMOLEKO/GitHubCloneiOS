@@ -12,4 +12,5 @@ struct ProfileItem: Item {
     let name: String
     let systemImage: String
     let systemImageColor: Color
+    let navigationItem: ProfileNavigationValues
 }

@@ -7,28 +7,39 @@
 
 import Foundation
 
-class RepositoriesVeiwModel: ObservableObject {
-    let apiService = APIService()
-    let cacheManager = CacheManager.shared
+@Observable
+class RepositoriesVeiwModel {
+    @ObservationIgnored let apiService = APIService()
+    @ObservationIgnored let cacheManager = CacheManager.shared
+    @ObservationIgnored var userLogin: String = ""
     
-    @Published var repositoriesState: LoadingState = .loading
-    @Published var repositories = [Repository]()
+    var repositoriesState: LoadingState = .loading
+    var repositories = [Repository]()
+    
+    init(userLogin: String?) {
+        self.userLogin = userLogin ?? UserDefaults.standard.string(
+            forKey: "current_user_login"
+        )!
+    }
    
     //TODO: userId should be somewhere like in userDefaults/SwifData
-    func getRepositories(for userName: String = "clementmoleko", userId: Int = 105995526) async {
+    func getRepositories(
+        for userName: String = "clementmoleko",
+        userId: Int = 105995526
+    ) async {
         print("getting repos")
-        if let cachedRepositoriesData = await cacheManager.getObject(forkey: "Repositories_\(userId)") {
-            print("getting cached repos")
-            let decoder = JSONDecoder();
-            do {
-                repositories = try decoder.decode([Repository].self, from: cachedRepositoriesData)
-                repositoriesState = .success
-            } catch {
-                print("Decoding repos error")
-                repositoriesState = .failure
-            }
-        } else {
+        guard let cachedRepositoriesData = await cacheManager.getObject(forkey: "Repositories_\(userId)") else {
             await downloadUserRepositories(for: userName)
+            return
+        }
+        print("getting cached repos")
+        let decoder = JSONDecoder();
+        do {
+            repositories = try decoder.decode([Repository].self, from: cachedRepositoriesData)
+            repositoriesState = .success
+        } catch {
+            print("Decoding repos error")
+            repositoriesState = .failure
         }
     }
     
