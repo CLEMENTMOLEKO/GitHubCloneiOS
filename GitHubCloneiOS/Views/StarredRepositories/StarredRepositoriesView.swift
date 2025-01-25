@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct StarredRepositoriesView: View {
-    @State var viewModel: StarredRepositoriesViewModel = .init()
+    @State var viewModel: StarredRepositoriesViewModel
+    
+    init(userLogin: String?) {
+        _viewModel = State(wrappedValue: StarredRepositoriesViewModel(userLogin: userLogin))
+    }
     
     var body: some View {
         List {
@@ -58,6 +62,6 @@ struct StarredRepositoriesView: View {
 
 #Preview {
     NavigationStack {
-        StarredRepositoriesView()
+        StarredRepositoriesView(userLogin: "clementmoleko")
     }
 }

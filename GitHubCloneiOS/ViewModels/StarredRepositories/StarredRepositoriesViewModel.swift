@@ -10,14 +10,19 @@ import Observation
 
 @Observable
 final class StarredRepositoriesViewModel {
-    let apiService: APIService = APIService() //TODO: Should be injected.
+    @ObservationIgnored let apiService: APIService = APIService() //TODO: Should be injected.
+    @ObservationIgnored let userLogin: String
     
     var searchText: String = ""
     var repositories: [Repository] = []
     var loadingState: LoadingState = .loading
     
+    init(userLogin: String? = nil) {
+        self.userLogin = userLogin ?? UserDefaults.standard.string(forKey: "current_user_login")!
+    }
+    
     func fetchStarredRepositories() async {
-        let endpoint = "https://api.github.com/users/CLEMENTMOLEKO/starred"
+        let endpoint = "https://api.github.com/users/\(userLogin)/starred"
         let repositoriesResult: Result<[Repository], APIError> = await apiService.getJSONData(
             from: endpoint,
             keyDecodingStrategy: .convertFromSnakeCase

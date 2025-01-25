@@ -26,8 +26,8 @@ enum ProfileNavigationValues: NavigationDestination {
             FollowersView(userLogin: userLogin)
         case .repositories(let userLogin):
             RepositoriesView(userLogin: userLogin)
-        case .starred:
-            Text("Starred View")
+        case .starred(let userLogin):
+            StarredRepositoriesView(userLogin: userLogin)
         case .profile(let userLogin):
             ProfileView(userLogin: userLogin)
         case .organizations:
