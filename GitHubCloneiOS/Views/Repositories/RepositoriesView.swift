@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct RepositoriesView: View {
-    @StateObject var viewModel = RepositoriesVeiwModel();
+    @State var viewModel:    RepositoriesVeiwModel
+
+    
+    init(userLogin: String?) {
+        _viewModel = State(wrappedValue: RepositoriesVeiwModel(userLogin: userLogin))
+    }
     
     var body: some View {
         Group {
@@ -37,6 +42,6 @@ struct RepositoriesView: View {
 
 #Preview {
     NavigationStack {
-        RepositoriesView()
+        RepositoriesView(userLogin: "CLEMENTMOLEKO")
     }
 }

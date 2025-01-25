@@ -12,7 +12,7 @@ enum HomeNavigationValues: NavigationDestination {
     case pullRequests
     case discussions
     case projects
-    case repositories
+    case repositories(userLogin: String? = nil)
     case repositoryDetail(repository: Repository)
     case starred
     case organizations
@@ -34,8 +34,8 @@ enum HomeNavigationValues: NavigationDestination {
 //        case .pullRequests:
 //        case .discussions:
 //        case .projects:
-        case .repositories:
-            RepositoriesView()
+        case .repositories(let userLogin):
+            RepositoriesView(userLogin: userLogin)
         case .repositoryDetail(let repository):
             RepositoryDetailsView(repository: repository)
         case .starred:

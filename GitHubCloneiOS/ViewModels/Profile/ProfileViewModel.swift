@@ -10,9 +10,24 @@ import Foundation
 @MainActor
 final class ProfileViewModel: ObservableObject {
     let gitHubItems: [ProfileItem] = [
-        ProfileItem(name: "Repositories", systemImage: "checkmark.rectangle.stack.fill", systemImageColor: .gray),
-        ProfileItem(name: "Starred", systemImage: "star", systemImageColor: .yellow),
-        ProfileItem(name: "Organizations", systemImage: "building.2", systemImageColor: .orange),
+        ProfileItem(
+            name: "Repositories",
+            systemImage: "checkmark.rectangle.stack.fill",
+            systemImageColor: .gray,
+            navigationItem: .repositories()
+        ),
+        ProfileItem(
+            name: "Starred",
+            systemImage: "star",
+            systemImageColor: .yellow,
+            navigationItem: .starred()
+        ),
+        ProfileItem(
+            name: "Organizations",
+            systemImage: "building.2",
+            systemImageColor: .orange,
+            navigationItem: .organizations
+        ),
     ]
     
     @Published var user: User? = nil
