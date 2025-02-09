@@ -39,6 +39,13 @@ struct IssuesView: View {
         "Open bug: layout glitch"
     ]
     
+    init() {
+        //Remove bottom border on the topbar so filters look embedded on the topbar.
+        let appearance = UINavigationBarAppearance()
+        appearance.shadowColor = .clear
+        UINavigationBar.appearance().standardAppearance = appearance
+    }
+    
     var body: some View {
         ScrollView {
             LazyVStack(pinnedViews: .sectionHeaders) {
@@ -120,19 +127,18 @@ where T.RawValue == String, T.AllCases : RandomAccessCollection {
         } label: {
             HStack(spacing: 4) {
                 Text(selection.rawValue)
+                    .font(.caption)
                 Image(systemName: "chevron.down")
                     .font(.system(size: 10, weight: .semibold))
             }
             .font(.callout)
-            .padding(.horizontal, 12).padding(.vertical, 8)
-            .cornerRadius(16)
         }
         .pickerStyle(.menu)
+        .background(Capsule().fill(Color(uiColor: .secondarySystemFill)))
     }
 }
 
 struct PinnedHeader: View {
-    @State private var isPinned = false
     @State private var yOffset: CGFloat = 8
 
     @State private var selectedOpen = OpenState.open
@@ -148,10 +154,14 @@ struct PinnedHeader: View {
             selectedOrg: $selectedOrg
         )
         .background(
+            yOffset < 153 ? Rectangle().fill(.bar).opacity(1) : Rectangle().fill(.bar).opacity(0)
+        )
+        .background(
             //Empty geometry reader used to find out filter row position.
             GeometryReader { proxy in
                 //TODO: why is preference change firing once even when we scroll? geometry reader is not updating. always zero.
-                Text("\(proxy.frame(in: .global).minY)")
+                Rectangle()
+                    .fill(.clear)
                     .preference(
                         key: HeaderOffsetPreferenceKey.self,
                         value: proxy.frame(in: .global).minY
@@ -161,9 +171,6 @@ struct PinnedHeader: View {
         .onPreferenceChange(HeaderOffsetPreferenceKey.self, perform: { value in
             yOffset = value
         })
-        .overlay {
-            Text("\(yOffset)")
-        }
     }
 }
 
