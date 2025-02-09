@@ -147,23 +147,20 @@ struct PinnedHeader: View {
             selectedVisibility: $selectedVisibility,
             selectedOrg: $selectedOrg
         )
-        .background(isPinned ? .bar : .ultraThin)
         .background(
             //Empty geometry reader used to find out filter row position.
             GeometryReader { proxy in
                 //TODO: why is preference change firing once even when we scroll? geometry reader is not updating. always zero.
-                Color.clear
+                Text("\(proxy.frame(in: .global).minY)")
                     .preference(
                         key: HeaderOffsetPreferenceKey.self,
                         value: proxy.frame(in: .global).minY
                     )
             }
         )
-        .onPreferenceChange(HeaderOffsetPreferenceKey.self) { newMinY in
-            print("preference changed: \(newMinY)")
-            yOffset = newMinY
-            isPinned = (newMinY <= 0)
-        }
+        .onPreferenceChange(HeaderOffsetPreferenceKey.self, perform: { value in
+            yOffset = value
+        })
         .overlay {
             Text("\(yOffset)")
         }
@@ -173,7 +170,7 @@ struct PinnedHeader: View {
 struct HeaderOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
+        value += nextValue()
     }
 }
 
