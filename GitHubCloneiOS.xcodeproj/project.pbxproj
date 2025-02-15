@@ -34,6 +34,7 @@
 		285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285AE01C2B4E804F00FDCED9 /* APIService.swift */; };
 		286ABAEA2C9F26CC00DB8BEB /* CommitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */; };
 		286F9B9F2D0DC1D30061B876 /* EditStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F9B9E2D0DC1D30061B876 /* EditStatusView.swift */; };
+		2877CA652D60DB5C00C1DCF2 /* FilteredSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2877CA642D60DB5C00C1DCF2 /* FilteredSearchView.swift */; };
 		288161012CFB6C76005EE8B8 /* ProfileNavigationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288161002CFB6C76005EE8B8 /* ProfileNavigationValues.swift */; };
 		288161052CFB72BA005EE8B8 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288161042CFB72BA005EE8B8 /* NavigationDestination.swift */; };
 		288161082CFB7621005EE8B8 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288161072CFB7621005EE8B8 /* FollowersView.swift */; };
@@ -100,6 +101,7 @@
 		285AE01C2B4E804F00FDCED9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		286ABAE92C9F26CC00DB8BEB /* CommitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsView.swift; sourceTree = "<group>"; };
 		286F9B9E2D0DC1D30061B876 /* EditStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatusView.swift; sourceTree = "<group>"; };
+		2877CA642D60DB5C00C1DCF2 /* FilteredSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredSearchView.swift; sourceTree = "<group>"; };
 		288161002CFB6C76005EE8B8 /* ProfileNavigationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationValues.swift; sourceTree = "<group>"; };
 		288161042CFB72BA005EE8B8 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		288161072CFB7621005EE8B8 /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				281D17282CB2E01B00D77FC7 /* MarkDownView.swift */,
 				288161122D05D3D2005EE8B8 /* UserListView.swift */,
 				283F6D062D3D85D100681D11 /* RepositoryCardView.swift */,
+				2877CA642D60DB5C00C1DCF2 /* FilteredSearchView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				28D899462C9F2B7C000C5822 /* Commit.swift in Sources */,
 				28F8675B2C5FAF7D009F3CCC /* RepositoriesVeiwModel.swift in Sources */,
 				2814A5812D3C18CC00C69BDC /* StarredRepositoriesView.swift in Sources */,
+				2877CA652D60DB5C00C1DCF2 /* FilteredSearchView.swift in Sources */,
 				2800E5842C5FB99F00CD4E43 /* ProfileItem.swift in Sources */,
 				28E394EF2C709F3D005D79C3 /* DevData.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
