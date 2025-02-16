@@ -29,15 +29,9 @@ enum Organization: String, CaseIterable {
 }
 
 struct IssuesView: View {
+    @State private var viewModel: IssuesViewModel = .init()
     // TODO: move states to a view model.
     @State private var searchText = ""
-    
-    private let issues = [
-        "Edit mode toggles twice",
-        "Some random bug in UI",
-        "Closed bug: login issue",
-        "Open bug: layout glitch"
-    ]
     
     init() {
         //Remove bottom border on the topbar so filters look embedded on the topbar.
@@ -50,9 +44,9 @@ struct IssuesView: View {
         ScrollView {
             LazyVStack(pinnedViews: .sectionHeaders) {
                 Section {
-                    ForEach(issues, id: \.self) { issue in
+                    ForEach(viewModel.issues) { issue in
                         HStack {
-                            Text(issue)
+                            Text(issue.title)
                         }
                         .frame(maxWidth: .infinity)
                         .background(Color(UIColor.systemGroupedBackground))
