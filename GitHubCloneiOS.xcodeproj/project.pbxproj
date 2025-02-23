@@ -22,6 +22,8 @@
 		280513152D62774F00F83BC9 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280513142D62774F00F83BC9 /* Issue.swift */; };
 		280513172D62788300F83BC9 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280513162D62788300F83BC9 /* Common.swift */; };
 		280513192D6278C600F83BC9 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280513182D6278C600F83BC9 /* Owner.swift */; };
+		2805131B2D6B7BB400F83BC9 /* CustomMenuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805131A2D6B7BB400F83BC9 /* CustomMenuPicker.swift */; };
+		2805131D2D6B7BF600F83BC9 /* PInnedHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805131C2D6B7BF600F83BC9 /* PInnedHeader.swift */; };
 		2814A57E2D3BCAC300C69BDC /* IssuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814A57D2D3BCAC300C69BDC /* IssuesView.swift */; };
 		2814A5812D3C18CC00C69BDC /* StarredRepositoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814A5802D3C18CC00C69BDC /* StarredRepositoriesView.swift */; };
 		2814A5832D3C1E6600C69BDC /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2814A5822D3C1E6600C69BDC /* MarkdownUI */; };
@@ -95,6 +97,8 @@
 		280513142D62774F00F83BC9 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		280513162D62788300F83BC9 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		280513182D6278C600F83BC9 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		2805131A2D6B7BB400F83BC9 /* CustomMenuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuPicker.swift; sourceTree = "<group>"; };
+		2805131C2D6B7BF600F83BC9 /* PInnedHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PInnedHeader.swift; sourceTree = "<group>"; };
 		2814A57D2D3BCAC300C69BDC /* IssuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesView.swift; sourceTree = "<group>"; };
 		2814A5802D3C18CC00C69BDC /* StarredRepositoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRepositoriesView.swift; sourceTree = "<group>"; };
 		281D17202CB1CA7400D77FC7 /* ListRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItem.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				288161122D05D3D2005EE8B8 /* UserListView.swift */,
 				283F6D062D3D85D100681D11 /* RepositoryCardView.swift */,
 				2877CA642D60DB5C00C1DCF2 /* FilteredSearchView.swift */,
+				2805131A2D6B7BB400F83BC9 /* CustomMenuPicker.swift */,
+				2805131C2D6B7BF600F83BC9 /* PInnedHeader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -742,6 +748,7 @@
 				281D172B2CB2E2B600D77FC7 /* MarkDownViewModel.swift in Sources */,
 				28D8994C2C9F4FED000C5822 /* Date+.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
+				2805131B2D6B7BB400F83BC9 /* CustomMenuPicker.swift in Sources */,
 				28C0CB812C42D63C00B31B78 /* View+.swift in Sources */,
 				28F867592C5FAE83009F3CCC /* RepositoriesView.swift in Sources */,
 				2830621D2B5512CD00BC17E5 /* FavoritesViewModel.swift in Sources */,
@@ -751,6 +758,7 @@
 				28F343FB2B49498C00FDB44B /* TrendingRepositoriesView.swift in Sources */,
 				2800E5812C5FB94500CD4E43 /* ExploreItem.swift in Sources */,
 				2881610E2D05D1F6005EE8B8 /* FollowingView.swift in Sources */,
+				2805131D2D6B7BF600F83BC9 /* PInnedHeader.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
 				282153DD2C711E7300388B89 /* EditMyWorksView.swift in Sources */,
 				280513152D62774F00F83BC9 /* Issue.swift in Sources */,

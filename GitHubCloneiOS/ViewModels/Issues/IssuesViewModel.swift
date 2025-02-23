@@ -12,6 +12,14 @@ import Observation
 final class IssuesViewModel {
     @ObservationIgnored let apiService: APIService = .init()
     
+    //Selections
+    var selectedOpen = OpenState.open
+    var selectedCreator = CreatedBy.me
+    var selectedVisibility = Visibility.all
+    var selectedOrg = Organization.all
+
+    
+    var searchText = ""
     var issues: [Issue] = []
     var issuesState: LoadingState = .loading
     
