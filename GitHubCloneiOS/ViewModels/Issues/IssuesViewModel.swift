@@ -12,7 +12,7 @@ import Observation
 final class IssuesViewModel {
     @ObservationIgnored let apiService: APIService = .init()
     
-    //Selections
+    //Filter Selections
     var selectedOpen = OpenState.open
     var selectedCreator = CreatedBy.me
     var selectedVisibility = Visibility.all

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @EnvironmentObject var navigationManager: NavigationManager
+    
     @StateObject var vm: ExploreViewModel = .init()
     @State var showAlert: Bool = false
     
@@ -99,6 +101,9 @@ private extension ExploreView {
             ForEach(vm.repositories) { repository in
                 //maybe pass the id and make the request on the specific component for lazy loading?
                 RepositoryActionCardView(repository: repository)
+                    .pressable {
+                        navigationManager.navigate(to: HomeNavigationValues.repositoryDetail(repository: repository))
+                    }
             }
         case .failure:
             VStack {

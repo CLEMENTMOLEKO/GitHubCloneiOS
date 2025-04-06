@@ -40,6 +40,10 @@ struct GithubCloneApp: App {
                     .tag(TabSelection.notifications)
 
                 ExploreView()
+                    .navigationStackWithDestination(
+                        for: HomeNavigationValues.self,
+                        path: $navigationManager.homeRoutes
+                    )
                     .tabItem {
                         Image(systemName: "flashlight.on.fill")
                         Text("Explore")

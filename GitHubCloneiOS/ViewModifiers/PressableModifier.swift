@@ -21,7 +21,7 @@ struct PressableButtonStyle: ViewModifier {
         content
             .scaleEffect(isPressed ? scaleFactor : 1.0)
             .gesture(
-                LongPressGesture(minimumDuration: 0)
+                LongPressGesture(minimumDuration: 0.0001)
                     .onEnded { _ in
                         withAnimation(.easeInOut(duration: 0.25)) {
                             isPressed = true
