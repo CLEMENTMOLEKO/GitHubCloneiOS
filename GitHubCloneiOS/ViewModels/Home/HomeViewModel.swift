@@ -15,7 +15,7 @@ class HomeViewModel: ObservableObject {
         ShortCut(icon: "arrow.triangle.branch", color: .blue),
         ShortCut(icon: "bubble.left.and.bubble.right", color: .purple),
         ShortCut(icon: "building.2", color: .orange),
-        ShortCut(icon: "personperson.2", color: .red),
+        ShortCut(icon: "person.2", color: .red),
         ShortCut(icon: "suitcase", color: .purple),
         ShortCut(icon: "document.badge.plus", color: .gray),
     ] 
