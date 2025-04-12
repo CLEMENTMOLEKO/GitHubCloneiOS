@@ -28,7 +28,11 @@ struct HomeView: View {
                 }
             }
         }
-        .sheet(item: $currentHomeSheet) { $0 }
+        .sheet(item: $currentHomeSheet) { item in
+            NavigationStack {
+                item
+            }
+        }
     }
 }
 
