@@ -450,9 +450,17 @@
 		28C287802DAACC7B00773924 /* Shortcuts */ = {
 			isa = PBXGroup;
 			children = (
+				28C287832DAADB7200773924 /* components */,
 				28C287812DAACC9100773924 /* ShortcutsView.swift */,
 			);
 			path = Shortcuts;
+			sourceTree = "<group>";
+		};
+		28C287832DAADB7200773924 /* components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 		28D899422C9F2A9C000C5822 /* Commits */ = {

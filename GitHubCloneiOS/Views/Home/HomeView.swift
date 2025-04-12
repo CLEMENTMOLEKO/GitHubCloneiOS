@@ -102,7 +102,7 @@ private extension HomeView {
                 }
                 
                 Button {
-                    //TODO: Add favorites
+                    currentHomeSheet = .shortcuts
                 } label: {
                     Text("Get started")
                         .fontWeight(.medium)

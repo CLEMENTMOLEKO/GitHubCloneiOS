@@ -11,11 +11,9 @@ struct ShortcutsView: View {
     var body: some View {
         List {
             Section {
-                HStack {
-                    Image(systemName:"plus")
-                    Text("Create New Shortcut")
+                Button("Create New Shortcut", systemImage: "plus") {
+                    
                 }
-                .foregroundStyle(.blue)
             }
             
             Section {
