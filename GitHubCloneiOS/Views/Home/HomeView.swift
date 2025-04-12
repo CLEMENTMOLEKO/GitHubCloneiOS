@@ -95,7 +95,7 @@ private extension HomeView {
     var shortcuts: some View {
         Section {
             VStack {
-                HStack(spacing: -3) {
+                HStack(spacing: -5) {
                     ForEach(vm.shortcuts){ shortcut in
                        ShortcutCircle(shortcut: shortcut)
                     }

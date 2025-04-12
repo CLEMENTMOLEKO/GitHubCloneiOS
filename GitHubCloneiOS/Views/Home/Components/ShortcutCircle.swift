@@ -14,14 +14,14 @@ struct ShortcutCircle: View {
         Circle()
             .fill(shortcut.color.opacity(0.3))
             .strokeBorder(style: StrokeStyle(lineWidth: 2))
-            .foregroundStyle(Color.black.opacity(0.05))
+            .foregroundStyle(Color(uiColor: .secondarySystemFill))
             .frame(width: 30, height: 30)
             .overlay{
                 Image(systemName: shortcut.icon)
                     .foregroundStyle(shortcut.color.opacity(0.8))
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 14, weight: .bold))
             }
-            
+            .background(Color(uiColor: .systemGroupedBackground), in: .circle)
     }
 }
 

@@ -25,7 +25,7 @@ enum HomeNavigationSheeValues: Identifiable, Hashable, View {
         case .favorites:
             FavoritesView()
         case .shortcuts:
-            Text("Shortcuts view")
+            ShortcutsView()
         case .recents:
             Text("Recents View")
         case .addRepository:
