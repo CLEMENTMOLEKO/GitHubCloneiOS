@@ -95,11 +95,9 @@ private extension HomeView {
     var shortcuts: some View {
         Section {
             VStack {
-                HStack(spacing: 0) {
-                    ForEach(vm.gitHubItems){ work in
-                        Circle()
-                            .strokeBorder(style: StrokeStyle())
-                            .frame(height: 30)
+                HStack(spacing: -3) {
+                    ForEach(vm.shortcuts){ shortcut in
+                       ShortcutCircle(shortcut: shortcut)
                     }
                 }
                 
