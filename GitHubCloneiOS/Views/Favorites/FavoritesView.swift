@@ -73,7 +73,7 @@ private extension FavoritesView {
                                 .fill(.gray)
                         }
                         .frame(width: 30)
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(repo.owner.login)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
