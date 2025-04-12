@@ -63,6 +63,7 @@
 		28C0CB832C42D70900B31B78 /* HomeNavigationValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */; };
 		28C0CB852C42DCE000B31B78 /* HomeNavigationSheetValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB842C42DCE000B31B78 /* HomeNavigationSheetValues.swift */; };
 		28C0CB872C42DE2900B31B78 /* EditMyWorksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */; };
+		28C2877F2DAAC51700773924 /* ShortcutCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2877E2DAAC51700773924 /* ShortcutCircle.swift */; };
 		28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834422B47D8D000255A7F /* ExploreViewModel.swift */; };
 		28C834452B47FCA500255A7F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834442B47FCA500255A7F /* Repository.swift */; };
 		28D899442C9F2AB2000C5822 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */; };
@@ -137,6 +138,7 @@
 		28C0CB822C42D70900B31B78 /* HomeNavigationValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationValues.swift; sourceTree = "<group>"; };
 		28C0CB842C42DCE000B31B78 /* HomeNavigationSheetValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationSheetValues.swift; sourceTree = "<group>"; };
 		28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyWorksViewModel.swift; sourceTree = "<group>"; };
+		28C2877E2DAAC51700773924 /* ShortcutCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCircle.swift; sourceTree = "<group>"; };
 		28C834422B47D8D000255A7F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		28C834442B47FCA500255A7F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
@@ -435,6 +437,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		28C2877D2DAAC4F600773924 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				28C2877E2DAAC51700773924 /* ShortcutCircle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		28D899422C9F2A9C000C5822 /* Commits */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +529,7 @@
 		28F8675C2C5FB268009F3CCC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				28C2877D2DAAC4F600773924 /* Components */,
 				28F198572B46688200FE2064 /* HomeView.swift */,
 			);
 			path = Home;
@@ -724,6 +735,7 @@
 				28E394EF2C709F3D005D79C3 /* DevData.swift in Sources */,
 				28F1985E2B4668FC00FE2064 /* Item.swift in Sources */,
 				288161012CFB6C76005EE8B8 /* ProfileNavigationValues.swift in Sources */,
+				28C2877F2DAAC51700773924 /* ShortcutCircle.swift in Sources */,
 				28B194722CF3A59800F43807 /* CodeContent.swift in Sources */,
 				28F343F92B4939A700FDB44B /* RepositoryActionCardView.swift in Sources */,
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
