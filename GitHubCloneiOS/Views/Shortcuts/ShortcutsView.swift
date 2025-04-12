@@ -24,6 +24,7 @@ struct ShortcutsView: View {
             }
         }
         .navigationTitle("Shortcuts")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
