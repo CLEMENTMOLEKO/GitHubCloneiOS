@@ -19,9 +19,9 @@ struct ShortcutCircle: View {
             .overlay{
                 Image(systemName: shortcut.icon)
                     .foregroundStyle(shortcut.color.opacity(0.8))
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 14, weight: .bold))
             }
-            
+            .background(Color(uiColor: .systemGroupedBackground), in: .circle)
     }
 }
 
