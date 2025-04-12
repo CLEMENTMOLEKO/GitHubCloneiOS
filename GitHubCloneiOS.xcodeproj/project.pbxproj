@@ -64,6 +64,7 @@
 		28C0CB852C42DCE000B31B78 /* HomeNavigationSheetValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB842C42DCE000B31B78 /* HomeNavigationSheetValues.swift */; };
 		28C0CB872C42DE2900B31B78 /* EditMyWorksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */; };
 		28C2877F2DAAC51700773924 /* ShortcutCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2877E2DAAC51700773924 /* ShortcutCircle.swift */; };
+		28C287822DAACC9100773924 /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287812DAACC9100773924 /* ShortcutsView.swift */; };
 		28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834422B47D8D000255A7F /* ExploreViewModel.swift */; };
 		28C834452B47FCA500255A7F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834442B47FCA500255A7F /* Repository.swift */; };
 		28D899442C9F2AB2000C5822 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */; };
@@ -139,6 +140,7 @@
 		28C0CB842C42DCE000B31B78 /* HomeNavigationSheetValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationSheetValues.swift; sourceTree = "<group>"; };
 		28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyWorksViewModel.swift; sourceTree = "<group>"; };
 		28C2877E2DAAC51700773924 /* ShortcutCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCircle.swift; sourceTree = "<group>"; };
+		28C287812DAACC9100773924 /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
 		28C834422B47D8D000255A7F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		28C834442B47FCA500255A7F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
@@ -445,6 +447,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		28C287802DAACC7B00773924 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				28C287812DAACC9100773924 /* ShortcutsView.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		28D899422C9F2A9C000C5822 /* Commits */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +482,7 @@
 		28F198562B46686900FE2064 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28C287802DAACC7B00773924 /* Shortcuts */,
 				2814A57F2D3C18AA00C69BDC /* StarredRepositories */,
 				2814A57C2D3BCAB200C69BDC /* Issues */,
 				286F9B9D2D0DC1B50061B876 /* EditStatus */,
@@ -759,6 +770,7 @@
 				288DDE7E2D0DDE560034EB90 /* EditStatusViewModel.swift in Sources */,
 				281D172B2CB2E2B600D77FC7 /* MarkDownViewModel.swift in Sources */,
 				28D8994C2C9F4FED000C5822 /* Date+.swift in Sources */,
+				28C287822DAACC9100773924 /* ShortcutsView.swift in Sources */,
 				285AE01D2B4E804F00FDCED9 /* APIService.swift in Sources */,
 				2805131B2D6B7BB400F83BC9 /* CustomMenuPicker.swift in Sources */,
 				28C0CB812C42D63C00B31B78 /* View+.swift in Sources */,
