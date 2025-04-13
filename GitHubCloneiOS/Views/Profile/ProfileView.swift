@@ -115,9 +115,9 @@ private extension ProfileView {
             ForEach(vm.gitHubItems){ item in
                 NavigationLink(value: item.navigationItem) {
                     ListRowItem(
-                        iconBackground: item.systemImageColor,
+                        iconBackground: item.iconBackgroundColor,
                         iconName: item.systemImage,
-                        name: item.name
+                        title: item.title
                     )
                 }
             }

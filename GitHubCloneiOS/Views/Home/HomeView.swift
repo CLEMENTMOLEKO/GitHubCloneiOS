@@ -43,9 +43,9 @@ private extension HomeView {
                 //TODO: this should be a component it's used everywhere (profile view, explore view)
                 NavigationLink(value: item.value) {
                     ListRowItem(
-                        iconBackground: item.systemImageColor,
+                        iconBackground: item.iconBackgroundColor,
                         iconName: item.systemImage,
-                        name: item.name
+                        title: item.title
                     )
                 }
             }
@@ -105,6 +105,13 @@ private extension HomeView {
                     }
                 }
                 
+                Text("The things you need, one tap away")
+                    .font(.headline)
+                
+                Text("Fast access to your lists of Issues, Pull Requests, or Discussions")
+                    .multilineTextAlignment(.center)
+                    .font(.callout)
+                
                 Button {
                     currentHomeSheet = .shortcuts
                 } label: {
@@ -116,6 +123,7 @@ private extension HomeView {
                 .buttonStyle(.bordered)
                 .buttonBorderShape(.roundedRectangle(radius: 5))
             }
+            .frame(maxWidth: .infinity)
         } header: {
             HStack{
                 Text("Shortcuts")

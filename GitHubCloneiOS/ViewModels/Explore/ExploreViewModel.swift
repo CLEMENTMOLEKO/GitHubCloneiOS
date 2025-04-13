@@ -14,8 +14,8 @@ final class ExploreViewModel : ObservableObject {
     @Published var repositoriesState: LoadingState = .loading
     
     let gitHubItems: [ExploreItem] = [
-        ExploreItem(name: "Trending Repositories", systemImage: "flame", systemImageColor: .purple),
-        ExploreItem(name: "Awesome LIsts", systemImage: "face.smiling", systemImageColor: .pink),
+        ExploreItem(title: "Trending Repositories", systemImage: "flame", iconBackgroundColor: .purple),
+        ExploreItem(title: "Awesome LIsts", systemImage: "face.smiling", iconBackgroundColor: .pink),
     ]
     
     func getRepositories() async {

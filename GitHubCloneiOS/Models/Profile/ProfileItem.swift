@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProfileItem: Item {
     let id = UUID()
-    let name: String
+    let title: String
     let systemImage: String
-    let systemImageColor: Color
+    let iconBackgroundColor: Color
     let navigationItem: ProfileNavigationValues
 }

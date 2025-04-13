@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExploreItem: Item {
     let id = UUID()
-    let name: String
+    let title: String
     let systemImage: String
-    let systemImageColor: Color
+    let iconBackgroundColor: Color
 }
