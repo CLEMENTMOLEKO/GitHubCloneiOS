@@ -12,45 +12,45 @@ import Foundation
 struct DevData {
     static let githubItems = [
         MyWorkItem(
-            name: "Issues",
+            title: "Issues",
             systemImage: "smallcircle.filled.circle",
-            systemImageColor: .green,
+            iconBackgroundColor: .green,
             value: .issues
         ),
         MyWorkItem(
-            name: "Pull Requests",
+            title: "Pull Requests",
             systemImage: "arrow.triangle.branch",
-            systemImageColor: .blue,
+            iconBackgroundColor: .blue,
             value: .pullRequests
         ),
         MyWorkItem(
-            name: "Discussions",
+            title: "Discussions",
             systemImage: "bubble.left.and.bubble.right",
-            systemImageColor: .purple,
+            iconBackgroundColor: .purple,
             value: .discussions
         ),
         MyWorkItem(
-            name: "Projects",
+            title: "Projects",
             systemImage: "list.bullet.rectangle",
-            systemImageColor: .gray,
+            iconBackgroundColor: .gray,
             value: .projects
         ),
         MyWorkItem(
-            name: "Repositories",
+            title: "Repositories",
             systemImage: "checkmark.rectangle.stack.fill",
-            systemImageColor: .gray,
+            iconBackgroundColor: .gray,
             value: .repositories()
         ),
         MyWorkItem(
-            name: "Starred",
+            title: "Starred",
             systemImage: "star",
-            systemImageColor: .yellow,
+            iconBackgroundColor: .yellow,
             value: .starred
         ),
         MyWorkItem(
-            name: "Organizations",
+            title: "Organizations",
             systemImage: "building.2",
-            systemImageColor: .orange,
+            iconBackgroundColor: .orange,
             value: .organizations
         ),
     ]

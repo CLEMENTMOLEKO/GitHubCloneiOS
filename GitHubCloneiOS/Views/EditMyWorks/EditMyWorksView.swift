@@ -18,7 +18,7 @@ struct EditMyWorksView: View {
                 ForEach(viewModel.gitHubItems){ item in
                     HStack {
                         RoundedRectangle(cornerRadius: 5)
-                            .fill(item.systemImageColor)
+                            .fill(item.iconBackgroundColor)
                             .frame(width: 35, height: 35)
                             .overlay{
                                 Image(systemName: item.systemImage)
@@ -27,7 +27,7 @@ struct EditMyWorksView: View {
                                     .foregroundColor(.white)
                             }
                             
-                        Text(item.name)
+                        Text(item.title)
                     }
                     .frame(height: 37)
                 }

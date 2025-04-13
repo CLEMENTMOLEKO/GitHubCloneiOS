@@ -81,9 +81,9 @@ struct RepositoryDetailsView: View {
                 ForEach(Array(DevData.githubItems.prefix(upTo: 3))){ item in
                     NavigationLink(value: item.value) {
                         ListRowItem(
-                            iconBackground: item.systemImageColor,
+                            iconBackground: item.iconBackgroundColor,
                             iconName: item.systemImage,
-                            name: item.name
+                            title: item.title
                         )
                     }
                 }
@@ -91,9 +91,9 @@ struct RepositoryDetailsView: View {
                     ForEach(Array(DevData.githubItems.suffix(from: 3))){ item in
                         NavigationLink(value: item.value) {
                             ListRowItem(
-                                iconBackground: item.systemImageColor,
+                                iconBackground: item.iconBackgroundColor,
                                 iconName: item.systemImage,
-                                name: item.name
+                                title: item.title
                             )
                         }
                     }
@@ -101,7 +101,7 @@ struct RepositoryDetailsView: View {
                     ListRowItem(
                         iconBackground: Color(uiColor: .systemFill),
                         iconName: "ellipsis",
-                        name: isExpanded ? "Less" : "More"
+                        title: isExpanded ? "Less" : "More"
                     )
                 }
             }
@@ -116,7 +116,7 @@ struct RepositoryDetailsView: View {
                     ListRowItem(
                         iconBackground: Color(uiColor: .systemFill),
                         iconName: "ellipsis.curlybraces",
-                        name: "Code"
+                        title: "Code"
                     )
                 }
                 
@@ -129,7 +129,7 @@ struct RepositoryDetailsView: View {
                     ListRowItem(
                         iconBackground: Color(uiColor: .systemFill),
                         iconName: "arrowshape.right.circle",
-                        name: "Commits"
+                        title: "Commits"
                     )
                     .badge(10)
                 }

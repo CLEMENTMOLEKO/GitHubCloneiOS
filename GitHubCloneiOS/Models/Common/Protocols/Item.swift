@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol Item: Identifiable, Hashable {
     var id : UUID {get}
-    var name: String {get}
+    var title: String {get}
     var systemImage: String {get}
-    var systemImageColor: Color {get}
+    var iconBackgroundColor: Color {get}
 }

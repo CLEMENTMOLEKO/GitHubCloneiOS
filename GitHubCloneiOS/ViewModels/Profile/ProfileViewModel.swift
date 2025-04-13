@@ -11,21 +11,21 @@ import Foundation
 final class ProfileViewModel: ObservableObject {
     let gitHubItems: [ProfileItem] = [
         ProfileItem(
-            name: "Repositories",
+            title: "Repositories",
             systemImage: "checkmark.rectangle.stack.fill",
-            systemImageColor: .gray,
+            iconBackgroundColor: .gray,
             navigationItem: .repositories()
         ),
         ProfileItem(
-            name: "Starred",
+            title: "Starred",
             systemImage: "star",
-            systemImageColor: .yellow,
+            iconBackgroundColor: .yellow,
             navigationItem: .starred()
         ),
         ProfileItem(
-            name: "Organizations",
+            title: "Organizations",
             systemImage: "building.2",
-            systemImageColor: .orange,
+            iconBackgroundColor: .orange,
             navigationItem: .organizations
         ),
     ]

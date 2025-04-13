@@ -65,6 +65,8 @@
 		28C0CB872C42DE2900B31B78 /* EditMyWorksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */; };
 		28C2877F2DAAC51700773924 /* ShortcutCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2877E2DAAC51700773924 /* ShortcutCircle.swift */; };
 		28C287822DAACC9100773924 /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287812DAACC9100773924 /* ShortcutsView.swift */; };
+		28C287862DAC415A00773924 /* ShortcutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287852DAC415A00773924 /* ShortcutsViewModel.swift */; };
+		28C287892DAC425300773924 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287882DAC425300773924 /* Shortcut.swift */; };
 		28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834422B47D8D000255A7F /* ExploreViewModel.swift */; };
 		28C834452B47FCA500255A7F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834442B47FCA500255A7F /* Repository.swift */; };
 		28D899442C9F2AB2000C5822 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */; };
@@ -141,6 +143,8 @@
 		28C0CB862C42DE2900B31B78 /* EditMyWorksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyWorksViewModel.swift; sourceTree = "<group>"; };
 		28C2877E2DAAC51700773924 /* ShortcutCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCircle.swift; sourceTree = "<group>"; };
 		28C287812DAACC9100773924 /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
+		28C287852DAC415A00773924 /* ShortcutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewModel.swift; sourceTree = "<group>"; };
+		28C287882DAC425300773924 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
 		28C834422B47D8D000255A7F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		28C834442B47FCA500255A7F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
@@ -463,6 +467,22 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		28C287842DAC413D00773924 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				28C287852DAC415A00773924 /* ShortcutsViewModel.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
+		28C287872DAC423800773924 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				28C287882DAC425300773924 /* Shortcut.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		28D899422C9F2A9C000C5822 /* Commits */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +537,7 @@
 		28F198592B4668C100FE2064 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				28C287842DAC413D00773924 /* Shortcuts */,
 				280513102D62769700F83BC9 /* Issues */,
 				283F6D032D3C3EF800681D11 /* StarredRepositories */,
 				288DDE7C2D0DDE130034EB90 /* EditStatus */,
@@ -536,6 +557,7 @@
 		28F1985C2B4668ED00FE2064 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				28C287872DAC423800773924 /* Shortcuts */,
 				2800E5852C5FBA2D00CD4E43 /* Common */,
 				2800E5822C5FB99000CD4E43 /* Profile */,
 				2800E57F2C5FB92500CD4E43 /* Explore */,
@@ -793,8 +815,10 @@
 				2805131D2D6B7BF600F83BC9 /* PInnedHeader.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
 				282153DD2C711E7300388B89 /* EditMyWorksView.swift in Sources */,
+				28C287892DAC425300773924 /* Shortcut.swift in Sources */,
 				280513152D62774F00F83BC9 /* Issue.swift in Sources */,
 				288DDE7B2D0DC8C00034EB90 /* ProfileNavigationSheetValues.swift in Sources */,
+				28C287862DAC415A00773924 /* ShortcutsViewModel.swift in Sources */,
 				28A988F52B4724A400C0DA24 /* ProfileView.swift in Sources */,
 				2800E58E2C5FCB0800CD4E43 /* APIError.swift in Sources */,
 				281D17212CB1CA7400D77FC7 /* ListRowItem.swift in Sources */,

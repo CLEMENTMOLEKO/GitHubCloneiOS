@@ -39,9 +39,9 @@ private extension ExploreView {
             ForEach(vm.gitHubItems){ item in
                 NavigationLink(value: item) {
                     ListRowItem(
-                        iconBackground: item.systemImageColor,
+                        iconBackground: item.iconBackgroundColor,
                         iconName: item.systemImage,
-                        name: item.name
+                        title: item.title
                     )
                 }
             }
