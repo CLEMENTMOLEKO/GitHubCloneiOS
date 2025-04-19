@@ -67,6 +67,7 @@
 		28C287822DAACC9100773924 /* ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287812DAACC9100773924 /* ShortcutsView.swift */; };
 		28C287862DAC415A00773924 /* ShortcutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287852DAC415A00773924 /* ShortcutsViewModel.swift */; };
 		28C287892DAC425300773924 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C287882DAC425300773924 /* Shortcut.swift */; };
+		28C2878B2DB42FFD00773924 /* CreateShortCutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C2878A2DB42FFC00773924 /* CreateShortCutView.swift */; };
 		28C834432B47D8D000255A7F /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834422B47D8D000255A7F /* ExploreViewModel.swift */; };
 		28C834452B47FCA500255A7F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C834442B47FCA500255A7F /* Repository.swift */; };
 		28D899442C9F2AB2000C5822 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */; };
@@ -145,6 +146,7 @@
 		28C287812DAACC9100773924 /* ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsView.swift; sourceTree = "<group>"; };
 		28C287852DAC415A00773924 /* ShortcutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewModel.swift; sourceTree = "<group>"; };
 		28C287882DAC425300773924 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
+		28C2878A2DB42FFC00773924 /* CreateShortCutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShortCutView.swift; sourceTree = "<group>"; };
 		28C834422B47D8D000255A7F /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		28C834442B47FCA500255A7F /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		28D899432C9F2AB2000C5822 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			children = (
 				28C287832DAADB7200773924 /* components */,
 				28C287812DAACC9100773924 /* ShortcutsView.swift */,
+				28C2878A2DB42FFC00773924 /* CreateShortCutView.swift */,
 			);
 			path = Shortcuts;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				2800E5882C5FBAEB00CD4E43 /* CachedAvatarView.swift in Sources */,
 				28D899442C9F2AB2000C5822 /* CommitsViewModel.swift in Sources */,
 				28F343FF2B4DE3D000FDB44B /* SettingsView.swift in Sources */,
+				28C2878B2DB42FFD00773924 /* CreateShortCutView.swift in Sources */,
 				28A988F72B47321200C0DA24 /* ExploreView.swift in Sources */,
 				288161082CFB7621005EE8B8 /* FollowersView.swift in Sources */,
 				283F6D052D3C3F2500681D11 /* StarredRepositoriesViewModel.swift in Sources */,
