@@ -50,7 +50,9 @@ struct ShortcutsView: View {
             }
         }
         .sheet(isPresented: $viewModel.showCreateShortCutView) {
-            CreateShortCutView()
+            NavigationStack {
+                CreateShortCutView()
+            }
         }
     }
 }
