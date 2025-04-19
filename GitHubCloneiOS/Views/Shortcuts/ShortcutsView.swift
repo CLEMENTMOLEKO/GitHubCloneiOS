@@ -16,7 +16,7 @@ struct ShortcutsView: View {
         List {
             Section {
                 Button("Create New Shortcut", systemImage: "plus") {
-                    
+                    viewModel.showCreateShortCutView.toggle()
                 }
             }
             
@@ -47,6 +47,11 @@ struct ShortcutsView: View {
                 Button("Done") {
                    dismiss()
                 }
+            }
+        }
+        .sheet(isPresented: $viewModel.showCreateShortCutView) {
+            NavigationStack {
+                CreateShortCutView()
             }
         }
     }
