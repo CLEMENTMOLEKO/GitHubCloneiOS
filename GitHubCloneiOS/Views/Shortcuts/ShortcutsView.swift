@@ -15,20 +15,56 @@ struct ShortcutsView: View {
     var body: some View {
         List {
             Section {
+                ForEach(viewModel.selectedShortcuts) { shortcut in
+                    HStack(spacing: 12) {
+                        Button {
+                            withAnimation {
+                                viewModel.deleteShortcut(shortcut)
+                            }
+                        } label: {
+                            Image(systemName: "minus.circle.fill")
+                                .font(.title2)
+                                .symbolRenderingMode(.multicolor)
+                        }
+
+                        ListRowItem(
+                            iconBackground: shortcut.iconBackgroundColor.opacity(0.4),
+                            iconName: shortcut.systemImage,
+                            title: shortcut.title,
+                            subtitle: shortcut.myWorkCategory,
+                            iconColor: shortcut.iconBackgroundColor
+                        )
+                    }
+                }
+            }
+            Section {
                 Button("Create New Shortcut", systemImage: "plus") {
                     viewModel.showCreateShortCutView.toggle()
                 }
             }
             
             Section {
-                ForEach(viewModel.suggestedShortcuts) { shortcut in
-                    ListRowItem(
-                        iconBackground: shortcut.iconBackgroundColor.opacity(0.4),
-                        iconName: shortcut.systemImage,
-                        title: shortcut.title,
-                        subtitle: shortcut.myWorkCategory,
-                        iconColor: shortcut.iconBackgroundColor
-                    )
+                ForEach(viewModel.suggestedShortcutsList) { shortcut in
+                    HStack(spacing: 12) {
+                        Button {
+                            withAnimation {
+                                viewModel.selectShortcut(shortcut)
+                            }
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title2)
+                                .symbolRenderingMode(.multicolor)
+                        }
+
+                        ListRowItem(
+                            iconBackground: shortcut.iconBackgroundColor.opacity(0.4),
+                            iconName: shortcut.systemImage,
+                            title: shortcut.title,
+                            subtitle: shortcut.myWorkCategory,
+                            iconColor: shortcut.iconBackgroundColor
+                        )
+                    }
+                    
                 }
                 
             } header: {
