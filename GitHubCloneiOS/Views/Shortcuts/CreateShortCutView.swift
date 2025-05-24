@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreateShortCutView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         List {
             Section {
@@ -40,6 +42,7 @@ struct CreateShortCutView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
+                    dismiss()
                 }
             }
             ToolbarItem(placement: .confirmationAction) {

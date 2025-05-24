@@ -17,16 +17,6 @@ struct ShortcutsView: View {
             Section {
                 ForEach(viewModel.selectedShortcuts) { shortcut in
                     HStack(spacing: 12) {
-                        Button {
-                            withAnimation {
-                                viewModel.deleteShortcut(shortcut)
-                            }
-                        } label: {
-                            Image(systemName: "minus.circle.fill")
-                                .font(.title2)
-                                .symbolRenderingMode(.multicolor)
-                        }
-
                         ListRowItem(
                             iconBackground: shortcut.iconBackgroundColor.opacity(0.4),
                             iconName: shortcut.systemImage,
@@ -36,7 +26,14 @@ struct ShortcutsView: View {
                         )
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    withAnimation {
+                        viewModel.deleteShortcut(at: indexSet.first!);
+                    }
+                })
+                .onMove(perform: viewModel.onMove)
             }
+
             Section {
                 Button("Create New Shortcut", systemImage: "plus") {
                     viewModel.showCreateShortCutView.toggle()
@@ -44,12 +41,12 @@ struct ShortcutsView: View {
             }
             
             Section {
-                ForEach(viewModel.suggestedShortcutsList) { shortcut in
+                ForEach(viewModel.suggestedShortcuts) { shortcut in
                     HStack(spacing: 12) {
                         Button {
                             withAnimation {
                                 viewModel.selectShortcut(shortcut)
-                            }
+                            } 
                         } label: {
                             Image(systemName: "plus.circle.fill")
                                 .font(.title2)
@@ -66,7 +63,6 @@ struct ShortcutsView: View {
                     }
                     
                 }
-                
             } header: {
                 Text("Suggested Shortcuts")
             }
@@ -90,6 +86,7 @@ struct ShortcutsView: View {
                 CreateShortCutView()
             }
         }
+        .environment(\.editMode, .constant(.active))
     }
 }
 
