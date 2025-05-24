@@ -56,6 +56,8 @@
 		28A988F92B473EEE00C0DA24 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A988F82B473EEE00C0DA24 /* ProfileViewModel.swift */; };
 		28B194702CF3A44700F43807 /* CodeContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1946F2CF3A44700F43807 /* CodeContentViewModel.swift */; };
 		28B194722CF3A59800F43807 /* CodeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B194712CF3A59800F43807 /* CodeContent.swift */; };
+		28B1D6D52DD0D58500A6EC12 /* CreateShortcutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D6D42DD0D58500A6EC12 /* CreateShortcutViewModel.swift */; };
+		28B1D6D72DE23D3D00A6EC12 /* MenuFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1D6D62DE23D3D00A6EC12 /* MenuFilter.swift */; };
 		28B63FCF2B465B7700FF0EDC /* GitHubCloneiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */; };
 		28B63FD62B465B7900FF0EDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */; };
 		28B63FE32B465C5100FF0EDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B63FE22B465C5100FF0EDC /* Assets.xcassets */; };
@@ -134,6 +136,8 @@
 		28A988F82B473EEE00C0DA24 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		28B1946F2CF3A44700F43807 /* CodeContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContentViewModel.swift; sourceTree = "<group>"; };
 		28B194712CF3A59800F43807 /* CodeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeContent.swift; sourceTree = "<group>"; };
+		28B1D6D42DD0D58500A6EC12 /* CreateShortcutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShortcutViewModel.swift; sourceTree = "<group>"; };
+		28B1D6D62DE23D3D00A6EC12 /* MenuFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFilter.swift; sourceTree = "<group>"; };
 		28B63FCB2B465B7700FF0EDC /* GitHubCloneiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubCloneiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B63FCE2B465B7700FF0EDC /* GitHubCloneiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubCloneiOSApp.swift; sourceTree = "<group>"; };
 		28B63FD52B465B7900FF0EDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -466,6 +470,7 @@
 		28C287832DAADB7200773924 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				28B1D6D62DE23D3D00A6EC12 /* MenuFilter.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 			isa = PBXGroup;
 			children = (
 				28C287852DAC415A00773924 /* ShortcutsViewModel.swift */,
+				28B1D6D42DD0D58500A6EC12 /* CreateShortcutViewModel.swift */,
 			);
 			path = Shortcuts;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				28F343F92B4939A700FDB44B /* RepositoryActionCardView.swift in Sources */,
 				2800E59A2C694DE900CD4E43 /* RepositoryDetailsView.swift in Sources */,
 				2800E58B2C5FBB1900CD4E43 /* CachedAvatarViewModel.swift in Sources */,
+				28B1D6D52DD0D58500A6EC12 /* CreateShortcutViewModel.swift in Sources */,
 				28A988F32B4719DB00C0DA24 /* NotificationsView.swift in Sources */,
 				280513192D6278C600F83BC9 /* Owner.swift in Sources */,
 				2814A57E2D3BCAC300C69BDC /* IssuesView.swift in Sources */,
@@ -818,6 +825,7 @@
 				2881610E2D05D1F6005EE8B8 /* FollowingView.swift in Sources */,
 				2805131D2D6B7BF600F83BC9 /* PInnedHeader.swift in Sources */,
 				28F1985B2B4668D500FE2064 /* HomeViewModel.swift in Sources */,
+				28B1D6D72DE23D3D00A6EC12 /* MenuFilter.swift in Sources */,
 				282153DD2C711E7300388B89 /* EditMyWorksView.swift in Sources */,
 				28C287892DAC425300773924 /* Shortcut.swift in Sources */,
 				280513152D62774F00F83BC9 /* Issue.swift in Sources */,

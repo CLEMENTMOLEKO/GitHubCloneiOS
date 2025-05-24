@@ -10,6 +10,9 @@ import SwiftUI
 struct CreateShortCutView: View {
     @Environment(\.dismiss) private var dismiss
     
+    @State private var status: Status = .open
+    @State private var author: Author = .me
+    
     var body: some View {
         List {
             Section {
@@ -35,6 +38,8 @@ struct CreateShortCutView: View {
                     Text("Discussions").tag("Discussions")
                 }
                 
+                filters
+                    .frame(maxWidth: .infinity)
             }
         }
         .navigationTitle("Create Shortcut")
@@ -45,17 +50,61 @@ struct CreateShortCutView: View {
                     dismiss()
                 }
             }
+            
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                 }
             }
         }
     }
+    
+    private var filters: some View {
+        ScrollView(.horizontal) {
+            HStack(spacing: 12) {
+                MenuFilter(options: Status.allCases, selection: $status)
+                MenuFilter(options: Author.allCases, selection: $author)
+                MenuFilter(options: Author.allCases, selection: $author)
+                MenuFilter(options: Author.allCases, selection: $author)
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+}
+
+enum Status: String, CaseIterable, Option {
+    case open  = "Open"
+    case closed = "Closed"
+    
+    var text: String {
+        rawValue
+    }
+    
+    var id: UUID {
+        UUID()
+    }
+}
+
+enum Author: String, CaseIterable, Option {
+    case me      = "Created by me"
+    case anyone  = "Anyone"
+   
+    var text: String {
+        rawValue
+    }
+    
+    var id: UUID {
+        UUID()
+    }
+}
+
+protocol Option: Identifiable {
+    var id: UUID { get }
+    var text: String { get }
 }
 
 #Preview {
     NavigationStack {
-     CreateShortCutView()
-        .preferredColorScheme(.dark)   
+        CreateShortCutView()
+            .preferredColorScheme(.dark)
     }
 }
