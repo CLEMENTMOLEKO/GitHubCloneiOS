@@ -7,12 +7,35 @@
 
 import SwiftUI
 
-struct MenuFilter: View {
+struct MenuFilter<Value: Option>: View {
+    let options: [Value]
+    @Binding var selection: Value
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Menu {
+            ForEach(options) { opt in
+                Button(opt.text) {
+                    selection = opt
+                }
+            }
+        } label: {
+            HStack(spacing: 4) {
+                Text(selection.text)
+                Image(systemName: "chevron.down")
+                    .font(.caption)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(
+                Capsule()
+                    .stroke(lineWidth: 0.5)
+            )
+            .cornerRadius(16)
+            .foregroundStyle(Color.secondary)
+        }
     }
 }
 
 #Preview {
-    MenuFilter()
+//    MenuFilter()
 }
