@@ -10,8 +10,9 @@ import SwiftUI
 struct CreateShortCutView: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var status: Status = .open
-    @State private var author: Author = .me
+    @State private var status: Status = .Open
+    @State private var author: Author = .CreatedByMe
+    @State private var access: Access = .ShowAll
     
     var body: some View {
         List {
@@ -63,8 +64,20 @@ struct CreateShortCutView: View {
             HStack(spacing: 12) {
                 MenuFilter(options: Status.allCases, selection: $status)
                 MenuFilter(options: Author.allCases, selection: $author)
-                MenuFilter(options: Author.allCases, selection: $author)
-                MenuFilter(options: Author.allCases, selection: $author)
+                MenuFilter(options: Access.allCases, selection: $access)
+                MenuFilterLabel(text: "Organization")
+                    .onTapGesture {
+                        //TODO: show org sheet.
+                    }
+                MenuFilterLabel(text: "Repository")
+                    .onTapGesture {
+                        //TODO: show repository list sheet.
+                    }
+                Divider().frame(width: 1)
+                MenuFilterLabel(text: "Sort:(SortValue)")
+                    .onTapGesture {
+                        //TODO: show sort sheet.
+                    }
             }
         }
         .scrollIndicators(.hidden)
@@ -72,8 +85,9 @@ struct CreateShortCutView: View {
 }
 
 enum Status: String, CaseIterable, Option {
-    case open  = "Open"
-    case closed = "Closed"
+    case Open
+    case Closed
+    case All
     
     var text: String {
         rawValue
@@ -85,11 +99,33 @@ enum Status: String, CaseIterable, Option {
 }
 
 enum Author: String, CaseIterable, Option {
-    case me      = "Created by me"
-    case anyone  = "Anyone"
-   
+    case CreatedByMe        = "Created by me"
+    case AssignedToMe       = "Assigned to me"
+    case MentionsMe         = "Mentions me"
+    case Involed            = "Involved"
+    
+    
     var text: String {
         rawValue
+    }
+    
+    var id: UUID {
+        UUID()
+    }
+}
+
+enum Access: String, CaseIterable, Option {
+    case ShowAll                    = "Show all"
+    case PublicRepository           = "Public repositories only"
+    case PrivateRepositoriesOnly    = "Mentions me"
+    
+    var text: String {
+        switch self {
+        case .ShowAll:
+            return "Visibility"
+        case .PublicRepository, .PrivateRepositoriesOnly:
+            return rawValue
+        }
     }
     
     var id: UUID {

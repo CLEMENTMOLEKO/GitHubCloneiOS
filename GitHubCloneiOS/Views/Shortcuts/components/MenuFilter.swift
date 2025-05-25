@@ -19,20 +19,29 @@ struct MenuFilter<Value: Option>: View {
                 }
             }
         } label: {
-            HStack(spacing: 4) {
-                Text(selection.text)
-                Image(systemName: "chevron.down")
-                    .font(.caption)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(
-                Capsule()
-                    .stroke(lineWidth: 0.5)
-            )
-            .cornerRadius(16)
-            .foregroundStyle(Color.secondary)
+            MenuFilterLabel(text: selection.text)
         }
+    }
+}
+
+struct MenuFilterLabel: View {
+    let text: String
+    
+    var body: some View {
+        HStack(spacing: 4) {
+            Text(text)
+                .font(.caption)
+            Image(systemName: "chevron.down")
+                .font(.caption)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            Capsule()
+                .stroke(lineWidth: 0.5)
+        )
+        .cornerRadius(16)
+        .foregroundStyle(Color.secondary)
     }
 }
 
